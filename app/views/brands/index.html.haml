@@ -1,0 +1,18 @@
+-@brands.each do|brand|
+  ="Name："
+  =link_to brand.name, brand_path(brand)
+  %br
+  ="Country："
+  =brand.country
+  %br
+  ="Since："
+  =brand.since
+  %br
+  ="Description："
+  =brand.description
+  %br
+  ="HP URL："
+  =brand.hp_url
+  %hr
+
+=link_to "New Brand", new_brand_path
