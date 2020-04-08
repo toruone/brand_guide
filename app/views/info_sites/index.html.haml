@@ -1,0 +1,9 @@
+-@info_sites.each do|info_site|
+  ="Name："
+  =link_to info_site.name, info_site_path(info_site)
+  %br
+  ="URL："
+  =info_site.url
+  %hr
+
+=link_to "New Site", new_info_site_path
