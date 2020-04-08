@@ -23,21 +23,21 @@
     %a{:href => "#"} Rh+
   %ul.list-unstyled
     %li
-      %a{:href => "#"} Dresses
+      %a{:href => "#"} Brand
     %li
-      %a{:href => "#"} Shirts & Tops
+      %a{:href => "#"} Shop
     %li
-      %a{:href => "#"} Jeans
+      %a{:href => "#"} News Site
     %li
-      %a{:href => "#"} Swimwear
+      %a{:href => "#"} Log in
     %li
-      %a{:href => "#"} Coats & Jackets
-    %li
-      %a{:href => "#"} Sunglasses & Eyewear
-    %li
-      %a{:href => "#"} Accessories
-    %li
-      %a{:href => "#"} Jewelry
+      %a{:href => "#"} Contact Us
+    -# %li
+    -#   %a{:href => "#"} Sunglasses & Eyewear
+    -# %li
+    -#   %a{:href => "#"} Contact Us
+    -# %li
+    -#   %a{:href => "#"} Jewelry
 .site-overlay
 .wrapper
   %header
@@ -92,6 +92,26 @@
             %a{:href => "#"}
               %img{:alt => "", :src => "assets/img/image_holder_1500x698.png"}/
   / / Slideshow
+  .container.showcase
+    .row
+      -@brands.each do |brand|
+        .product-grid.col-xs-6.col-sm-3
+          =link_to brand_path(brand), class: "item-wrap fancybox" do
+            .product-thumb{"data-sr" => ""}
+              %figure
+                .image
+                  -# %h3=brand.name
+                  -# %span=brand.country
+                -if brand.image.present?
+                  =image_tag brand.image_url, class: 'img-responsive'
+                -else
+                  %img.img-fluid{:src => "assets/img/image_holder_x263.png"}/
+                %figcaption
+                  .name
+                    %a{:href => "#"}=brand.name
+                  .price
+                    =brand.country
+
   .container.showcase
     .row
       .product-grid.col-xs-6.col-sm-3
