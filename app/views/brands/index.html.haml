@@ -92,39 +92,41 @@
             %a{:href => "#"}
               %img{:alt => "", :src => "assets/img/image_holder_1500x698.png"}/
   / / Slideshow
+  -# .container.showcase
+  -#   .row
+  -#     -@brands.each do |brand|
+  -#       .product-grid.col-xs-6.col-sm-3
+  -#         .product-thumb{"data-sr" => ""}
+  -#           %figure
+  -#             =link_to brand_path(brand), class: "item-wrap fancybox" do
+  -#               .image
+  -#                 -# %h3=brand.name
+  -#                 -# %span=brand.country
+  -#               -if brand.image.present?
+  -#                 =image_tag brand.image_url, class: 'img-responsive'
+  -#               -else
+  -#                 %img.img-fluid{:src => "assets/img/image_holder_x263.png"}/
+  -#               %figcaption
+  -#                 .name
+  -#                   %a{:href => "#"}=brand.name
+  -#                 .price
+  -#                   =brand.country
+
   .container.showcase
     .row
       -@brands.each do |brand|
         .product-grid.col-xs-6.col-sm-3
-          =link_to brand_path(brand), class: "item-wrap fancybox" do
-            .product-thumb{"data-sr" => ""}
-              %figure
-                .image
-                  -# %h3=brand.name
-                  -# %span=brand.country
-                -if brand.image.present?
-                  =image_tag brand.image_url, class: 'img-responsive'
-                -else
-                  %img.img-fluid{:src => "assets/img/image_holder_x263.png"}/
-                %figcaption
-                  .name
-                    %a{:href => "#"}=brand.name
-                  .price
-                    =brand.country
-
-  .container.showcase
-    .row
-      .product-grid.col-xs-6.col-sm-3
-        .product-thumb{"data-sr" => ""}
-          %figure
-            .image
-              %a{:href => "#"}
-                %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
-            %figcaption
-              .name
-                %a{:href => "#"} Oversized Shirt
-              .price
-                $122.00
+          .product-thumb{"data-sr" => ""}
+            %figure
+              .image
+                =link_to brand_path(brand) do
+                  =image_tag brand.image_url(:thumb), class: 'img-responsive'
+              %figcaption
+                .name
+                  =link_to brand.name, brand_path(brand)
+                  -# %a{:href => "#"} Oversized Shirt
+                .price
+                  =brand.country
       .product-grid.col-xs-6.col-sm-3
         .product-thumb{"data-sr" => ""}
           %figure
