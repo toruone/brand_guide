@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootstrap_form'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
+gem 'carrierwave'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
