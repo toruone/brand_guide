@@ -1,6 +1,8 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require jquery.min
+//= require bootstrap.min
 //= require magnific/jquery.magnific-popup.min
 //= require datetimepicker/moment
 //= require datetimepicker/bootstrap-datetimepicker.min

@@ -38,29 +38,70 @@
     = yield
     =render "footer"
   = javascript_include_tag "application"
+  :javascript
+    $(document).ready(function() {
 
-%span#home
--# %script{:src => "assets/js/jquery.min.js"}
--# %script{:src => "assets/js/bootstrap.min.js"}
--# %script{:src => "assets/js/owl-carousel/owl.carousel.min.js"}
--# %script{:src => "assets/js/smoothscroll.js"}
--# %script{:src => "assets/js/scrollreveal.min.js"}
--# %script{:src => "assets/js/script.js"}
-:javascript
-  $(document).ready(function() {
+      // Main banners slideshow
+      $("#slideshow").owlCarousel({
+        items: 6,
+        autoPlay: 6000,
+        singleItem: true,
+        navigation: true,
+        responsive: true,
+        navigationText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+        pagination: true
+      });
 
-    // Main banners slideshow
-    $("#slideshow").owlCarousel({
-      items: 6,
-      autoPlay: 6000,
-      singleItem: true,
-      navigation: true,
-      responsive: true,
-      navigationText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-      pagination: true
+      // scrollReveal plugin
+      window.sr = new scrollReveal();
+
+      // Add to cart button success alert
+      $("#button-cart").on("click", function() {
+        $("#content").parent().before('<div class="alert alert-success"> Success: You have added <a href="#">Petal Short Romper</a> to your <a href="#">shopping cart</a>! <button type="button" class="close" data-dismiss="alert"><i class="icon ion-ios-close-empty"></i></button></div>');
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+      });
+
+      // Add to wishlist button alert
+      $("#button-wishlist").on("click", function() {
+        $("#content").parent().before('<div class="alert alert-info"> You must <a href="#">login</a> or <a href="#">create an account</a> to save <a href="#">Petal Short Romper</a> to your <a href="#">whishlist</a>! <button type="button" class="close" data-dismiss="alert"><i class="icon ion-ios-close-empty"></i></button></div>');
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+      });
+
+      // Compare button success alert
+      $("#button-compare").on("click", function() {
+        $("#content").parent().before('<div class="alert alert-success"> Success: You have added <a href="#">Petal Short Romper</a> to your <a href="#">product comparison</a>! <button type="button" class="close" data-dismiss="alert"><i class="icon ion-ios-close-empty"></i></button></div>');
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+      });
+
+      // Datetimepicker
+      $(".date").datetimepicker({
+        pickTime: false
+      });
+
+      // Magnific popup
+      $(".thumbnails").magnificPopup({
+        type: "image",
+        delegate: "a",
+        gallery: {
+          enabled: true
+        }
+      });
+
+      // Scroll to reviews
+      $("#reviews").on("click", function(e) {
+        e.preventDefault();
+        $("html, body").animate({
+          scrollTop: $(".panel-review").offset().top
+        }, "slow");
+        $("#collapse-review").collapse("show");
+      });
     });
 
-    // scrollReveal plugin
-    window.sr = new scrollReveal();
 
-  });
+  -# %span#home
+  -# %script{:src => "assets/js/jquery.min.js"}
+  -# %script{:src => "assets/js/bootstrap.min.js"}
+  -# %script{:src => "assets/js/owl-carousel/owl.carousel.min.js"}
+  -# %script{:src => "assets/js/smoothscroll.js"}
+  -# %script{:src => "assets/js/scrollreveal.min.js"}
+  -# %script{:src => "assets/js/script.js"}
