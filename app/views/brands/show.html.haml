@@ -41,7 +41,7 @@
           .table-responsive
             %table.table
               %tr
-                %td Brand:
+                %td Brand Name:
                 %td=@brand.name
 
               %tr
@@ -54,156 +54,158 @@
                 %td HP URL:
                 %td
                   =link_to "#{@brand.hp_url}"
-          
-          %ul.list-unstyled
-            %li
-              %h2.price $123.20
-            %li Ex Tax: $720.00
-            %li Price in reward points: 400
-          %hr/
-          %h3 Available Options
+                -# %%td
+                -#   %a#reviews{:href => ""} 2 reviews
+
+          -# %ul.list-unstyled
+          -#   %li
+          -#     %h2.price $123.20
+          -#   %li Ex Tax: $720.00
+          -#   %li Price in reward points: 400
+          -# %hr/
+          -# %h3 Available Options
+          -# .form-group
+          -#   %label.control-label{:for => "input-option-date"} Delivery Date
+          -#   .input-group.date
+          -#     %input#input-option-date.form-control{"data-date-format" => "YYYY-MM-DD", :name => "date", :placeholder => "2015-09-22", :type => "text", :value => ""}/
+          -#     %span.input-group-btn
+          -#       %button.btn.btn-default{:type => "button"}
+          -#         %i.icon.ion-ios-calendar-outline
           .form-group
-            %label.control-label{:for => "input-option-date"} Delivery Date
-            .input-group.date
-              %input#input-option-date.form-control{"data-date-format" => "YYYY-MM-DD", :name => "date", :placeholder => "2015-09-22", :type => "text", :value => ""}/
-              %span.input-group-btn
-                %button.btn.btn-default{:type => "button"}
-                  %i.icon.ion-ios-calendar-outline
-          .form-group
-            %label.control-label{:for => "input-quantity"} Qty
-            %input#input-quantity.form-control{:name => "quantity", :size => "2", :type => "text", :value => "1"}/
+            -# %label.control-label{:for => "input-quantity"} Qty
+            -# %input#input-quantity.form-control{:name => "quantity", :size => "2", :type => "text", :value => "1"}/
             %br/
-            %button#button-cart.btn.btn-lg.btn-primary.btn-block{"data-loading-text" => "Loading...", :type => "button"} Add To Cart
-          %button#button-wishlist.btn.btn-default.btn-block{:type => "button"} Add to Wishlist
-          %button#button-compare.btn.btn-default.btn-block{:type => "button"} Compare this Product
-          %br/
-          / Description
-          .panel.panel-default
-            .panel-heading
-              %h4.panel-title
-                %a.accordion-toggle{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse-description"}
-                  Description
-                  %i.fa.fa-angle-down
-            #collapse-description.panel-collapse.collapse
-              .panel-body
-                %p iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.
-          / / Description
-          / Specification
-          .panel.panel-default
-            .panel-heading
-              %h4.panel-title
-                %a.accordion-toggle{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse-specification"}
-                  Specification
-                  %i.fa.fa-angle-down
-            #collapse-specification.panel-collapse.collapse
-              .panel-body
-                %table.table
-                  %tr
-                    %th{:colspan => "2"} Memory
-                  %tr
-                    %td Test 1
-                    %td 16Gb
-                  %tr
-                    %th{:colspan => "2"} Processor
-                  %tr
-                    %td No. of Cores
-                    %td 4
-          / / Specification
-          / Reviews
-          .panel.panel-default.panel-review
-            .panel-heading
-              %h4.panel-title
-                %a.accordion-toggle{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse-review"}
-                  Reviews (2)
-                  %i.fa.fa-angle-down
-            #collapse-review.panel-collapse.collapse
-              .panel-body
-                %form#form-review.form-horizontal
-                  %table.table
-                    %tr
-                      %td.text-left
-                        %i.icon.ion-ios-person
-                      %td{:style => "width: 72%;"}
-                        %strong Helen
-                      %td.text-right 10/01/2015
-                    %tr
-                      %td{:colspan => "3"}
-                        %p Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                        %span.fa.fa-stack
-                          %i.fa.fa-star.fa-stack-2x
-                        %span.fa.fa-stack
-                          %i.fa.fa-star.fa-stack-2x
-                        %span.fa.fa-stack
-                          %i.fa.fa-star.fa-stack-2x
-                        %span.fa.fa-stack
-                          %i.fa.fa-star-o.fa-stack-2x
-                        %span.fa.fa-stack
-                          %i.fa.fa-star-o.fa-stack-2x
-                  %br/
-                  %br/
-                  %table.table
-                    %tr
-                      %td.text-left
-                        %i.icon.ion-ios-person
-                      %td{:style => "width: 72%;"}
-                        %strong Mark
-                      %td.text-right 10/01/2015
-                    %tr
-                      %td{:colspan => "3"}
-                        %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                        %span.fa.fa-stack
-                          %i.fa.fa-star.fa-stack-2x
-                        %span.fa.fa-stack
-                          %i.fa.fa-star.fa-stack-2x
-                        %span.fa.fa-stack
-                          %i.fa.fa-star.fa-stack-2x
-                        %span.fa.fa-stack
-                          %i.fa.fa-star.fa-stack-2x
-                        %span.fa.fa-stack
-                          %i.fa.fa-star-o.fa-stack-2x
-                  %h2 Write Review
-                  .form-group.required
-                    .col-sm-12
-                      %label.control-label{:for => "input-name"} Your Name
-                      %input#input-name.form-control{:name => "name", :type => "text", :value => ""}/
-                  .form-group.required
-                    .col-sm-12
-                      %label.control-label{:for => "input-review"} Your Review
-                      %textarea#input-review.form-control{:name => "text", :rows => "5"}
-                      .help-block
-                        Note: HTML is not translated!
-                  .form-group.required
-                    .col-sm-12
-                      %label.control-label Rating
-                      \    Bad  
-                      %input{:name => "rating", :type => "radio", :value => "1"}/
-                      \ 
-                      %input{:name => "rating", :type => "radio", :value => "2"}/
-                      \ 
-                      %input{:name => "rating", :type => "radio", :value => "3"}/
-                      \ 
-                      %input{:name => "rating", :type => "radio", :value => "4"}/
-                      \ 
-                      %input{:name => "rating", :type => "radio", :value => "5"}/
-                      \  Good
-                  .form-group
-                    .col-sm-12
-                      .g-recaptcha{"data-sitekey" => ""}
-                  .buttons.clearfix
-                    .pull-right
-                      %button#button-review.btn.btn-primary{"data-loading-text" => "Loading...", :type => "button"} Continue
-          / / Reviews
-          / Tags
-          %p.tags
-            Tags:
-            = succeed "," do
-              %a{:href => "#"} clothing
-            = succeed "," do
-              %a{:href => "#"} dress
-            %a{:href => "#"} womans
+            %button#button-cart.btn.btn-lg.btn-primary.btn-block{"data-loading-text" => "Loading...", :type => "button"} Register on MyPage
+          -# %button#button-wishlist.btn.btn-default.btn-block{:type => "button"} Add to Wishlist
+          -# %button#button-compare.btn.btn-default.btn-block{:type => "button"} Compare this Product
+          -# %br/
+          -# / Description
+          -# .panel.panel-default
+          -#   .panel-heading
+          -#     %h4.panel-title
+          -#       %a.accordion-toggle{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse-description"}
+          -#         Description
+          -#         %i.fa.fa-angle-down
+          -#   #collapse-description.panel-collapse.collapse
+          -#     .panel-body
+          -#       %p iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.
+          -# / / Description
+          -# / Specification
+          -# .panel.panel-default
+          -#   .panel-heading
+          -#     %h4.panel-title
+          -#       %a.accordion-toggle{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse-specification"}
+          -#         Specification
+          -#         %i.fa.fa-angle-down
+          -#   #collapse-specification.panel-collapse.collapse
+          -#     .panel-body
+          -#       %table.table
+          -#         %tr
+          -#           %th{:colspan => "2"} Memory
+          -#         %tr
+          -#           %td Test 1
+          -#           %td 16Gb
+          -#         %tr
+          -#           %th{:colspan => "2"} Processor
+          -#         %tr
+          -#           %td No. of Cores
+          -#           %td 4
+          -# / / Specification
+          -# / Reviews
+          -# .panel.panel-default.panel-review
+          -#   .panel-heading
+          -#     %h4.panel-title
+          -#       %a.accordion-toggle{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse-review"}
+          -#         Reviews (2)
+          -#         %i.fa.fa-angle-down
+          -#   #collapse-review.panel-collapse.collapse
+          -#     .panel-body
+          -#       %form#form-review.form-horizontal
+          -#         %table.table
+          -#           %tr
+          -#             %td.text-left
+          -#               %i.icon.ion-ios-person
+          -#             %td{:style => "width: 72%;"}
+          -#               %strong Helen
+          -#             %td.text-right 10/01/2015
+          -#           %tr
+          -#             %td{:colspan => "3"}
+          -#               %p Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+          -#               %span.fa.fa-stack
+          -#                 %i.fa.fa-star.fa-stack-2x
+          -#               %span.fa.fa-stack
+          -#                 %i.fa.fa-star.fa-stack-2x
+          -#               %span.fa.fa-stack
+          -#                 %i.fa.fa-star.fa-stack-2x
+          -#               %span.fa.fa-stack
+          -#                 %i.fa.fa-star-o.fa-stack-2x
+          -#               %span.fa.fa-stack
+          -#                 %i.fa.fa-star-o.fa-stack-2x
+          -#         %br/
+          -#         %br/
+          -#         %table.table
+          -#           %tr
+          -#             %td.text-left
+          -#               %i.icon.ion-ios-person
+          -#             %td{:style => "width: 72%;"}
+          -#               %strong Mark
+          -#             %td.text-right 10/01/2015
+          -#           %tr
+          -#             %td{:colspan => "3"}
+          -#               %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+          -#               %span.fa.fa-stack
+          -#                 %i.fa.fa-star.fa-stack-2x
+          -#               %span.fa.fa-stack
+          -#                 %i.fa.fa-star.fa-stack-2x
+          -#               %span.fa.fa-stack
+          -#                 %i.fa.fa-star.fa-stack-2x
+          -#               %span.fa.fa-stack
+          -#                 %i.fa.fa-star.fa-stack-2x
+          -#               %span.fa.fa-stack
+          -#                 %i.fa.fa-star-o.fa-stack-2x
+          -#         %h2 Write Review
+          -#         .form-group.required
+          -#           .col-sm-12
+          -#             %label.control-label{:for => "input-name"} Your Name
+          -#             %input#input-name.form-control{:name => "name", :type => "text", :value => ""}/
+          -#         .form-group.required
+          -#           .col-sm-12
+          -#             %label.control-label{:for => "input-review"} Your Review
+          -#             %textarea#input-review.form-control{:name => "text", :rows => "5"}
+          -#             .help-block
+          -#               Note: HTML is not translated!
+          -#         .form-group.required
+          -#           .col-sm-12
+          -#             %label.control-label Rating
+          -#             \    Bad  
+          -#             %input{:name => "rating", :type => "radio", :value => "1"}/
+          -#             \ 
+          -#             %input{:name => "rating", :type => "radio", :value => "2"}/
+          -#             \ 
+          -#             %input{:name => "rating", :type => "radio", :value => "3"}/
+          -#             \ 
+          -#             %input{:name => "rating", :type => "radio", :value => "4"}/
+          -#             \ 
+          -#             %input{:name => "rating", :type => "radio", :value => "5"}/
+          -#             \  Good
+          -#         .form-group
+          -#           .col-sm-12
+          -#             .g-recaptcha{"data-sitekey" => ""}
+          -#         .buttons.clearfix
+          -#           .pull-right
+          -#             %button#button-review.btn.btn-primary{"data-loading-text" => "Loading...", :type => "button"} Continue
+          -# / / Reviews
+          -# / Tags
+          -# %p.tags
+          -#   Tags:
+          -#   = succeed "," do
+          -#     %a{:href => "#"} clothing
+          -#   = succeed "," do
+          -#     %a{:href => "#"} dress
+          -#   %a{:href => "#"} womans
           / / Tags
   / Related Products
-  %h3 Related Products
+  %h3 Retail Shops
   .row
     / Product Item
     .product-layout.product-grid.col-xs-6.col-sm-4.col-md-3
