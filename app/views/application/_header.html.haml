@@ -1,0 +1,59 @@
+%nav.side-nav.side-nav-left
+  %h2
+    %a{:href => "#"} Rh+
+  %ul.list-unstyled
+    %li
+      %a{:href => "#"} Brand
+    %li
+      %a{:href => "#"} Shop
+    %li
+      %a{:href => "#"} News Site
+    %li
+      %a{:href => "#"} Log in
+    %li
+      %a{:href => "#"} Contact Us
+    -# %li
+    -#   %a{:href => "#"} Sunglasses & Eyewear
+    -# %li
+    -#   %a{:href => "#"} Contact Us
+    -# %li
+    -#   %a{:href => "#"} Jewelry
+.site-overlay
+.wrapper
+  %header
+    .container-fluid
+      .row
+        .col-sm-12
+          .menu.pull-left{"data-placement" => "bottom", "data-toggle" => "tooltip", :title => "Menu"}
+            %i.icon.ion-ios-more
+          .account.pull-right
+            %ul.list-inline
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  %i.icon.ion-ios-person-outline{"data-placement" => "bottom", "data-toggle" => "tooltip", :title => "My Account"}
+                %ul.dropdown-menu.dropdown-menu-right.text-center
+                  %li.dropdown-triangle
+                  %li
+                    %a{:href => "#"} Register
+                  %li
+                    %a{:href => "#"} Login
+          .search.pull-right
+            .btn-group
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                %i.icon.ion-ios-search-strong{"data-container" => "body", "data-placement" => "bottom", "data-toggle" => "tooltip", :title => "Search"}
+              %ul.dropdown-menu.pull-right
+                %li.dropdown-triangle
+                %li
+                  .input-group
+                    %input.form-control{:name => "search", :type => "text", :value => ""}/
+                    .input-group-btn
+                      %button.btn.btn-default{:type => "button"} Search
+          .shopping-bag.pull-right
+            .btn-group
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                %i.icon.ion-bag{"data-container" => "body", "data-placement" => "bottom", "data-toggle" => "tooltip", :title => "Shopping Bag"}
+                %strong.counter 0
+              %ul.dropdown-menu.pull-right
+                %li.dropdown-triangle
+                %li
+                  %p.empty.text-center Your shopping cart is empty!

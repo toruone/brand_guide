@@ -1,6 +1,9 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require magnific/jquery.magnific-popup.min
+//= require datetimepicker/moment
+//= require datetimepicker/bootstrap-datetimepicker.min
 //= require rails-ujs
 //= require owl-carousel/owl.carousel.min
 //= require smoothscroll
