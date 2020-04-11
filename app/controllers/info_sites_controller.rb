@@ -45,6 +45,10 @@ class InfoSitesController < ApplicationController
     params[:info_site].permit(
       :name,
       :url,
+      :for,
+      :image_cache,
+      :image,
+      :remove_image,
     )
   end
 

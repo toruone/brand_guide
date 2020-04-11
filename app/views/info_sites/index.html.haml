@@ -1,9 +1,66 @@
--@info_sites.each do|info_site|
-  ="Name："
-  =link_to info_site.name, info_site_path(info_site)
-  %br
-  ="URL："
-  =info_site.url
-  %hr
+-# -@info_sites.each do|info_site|
+-#   ="Name："
+-#   =link_to info_site.name, info_site_path(info_site)
+-#   %br
+-#   ="URL："
+-#   =info_site.url
+-#   %hr
+-#
+-# =link_to "New Site", new_info_site_path
 
-=link_to "New Site", new_info_site_path
+.container
+  %ul.breadcrumb
+    %li
+      %a{:href => "/"}
+        %i.icon.ion-ios-home-outline
+    %li
+      %a{:href => "#"} Account
+    %li
+      %a{:href => "#"} Info Sites
+  .row
+    #content.col-sm-12
+      %h2 Information Sites
+      %table.table
+        %thead
+          %tr
+            %td.text-center
+            %td.text-left Name
+            %td.text-left URL
+            %td.text-right For
+            %td.text-right Unit Price
+            %td.text-right Action
+        -@info_sites.each do |info_site |
+          %tbody
+            %tr
+              %td.text-center
+                =link_to info_site_path(info_site) do
+                  -# %a{:href => "#"}
+                  -# =image_tag info_site.image_url
+                  %img{:alt => "", :src => "assets/img/image_holder_x90.png", :width => "90"}/
+                %td.text-left
+                  %a{:href => "#"}=info_site.name
+                %td.text-left=info_site.url
+                %td.text-right=info_site.for
+                %td.text-right $866.00
+                %td.text-right
+                  %button.btn.btn-danger{"data-toggle" => "tooltip", :title => "Add to Cart", :type => "button"}
+                    %i.icon.ion-ios-cart-outline
+                  %a.btn.btn-danger{"data-toggle" => "tooltip", :href => "#", :title => "Remove"}
+                    %i.icon.ion-ios-close-empty
+              -# %tr
+              -#   %td.text-center
+              -#     %a{:href => "#"}
+              -#       %img{:alt => "", :src => "assets/img/image_holder_x90.png", :width => "90"}/
+              -#     %td.text-left
+              -#       %a{:href => "#"} Waxed canvas laptop bag navy
+              -#     %td.text-left LB002
+              -#     %td.text-right In Stock
+              -#     %td.text-right $1178.00
+              -#     %td.text-right
+              -#       %button.btn.btn-danger{"data-toggle" => "tooltip", :title => "Add to Cart", :type => "button"}
+              -#         %i.icon.ion-ios-cart-outline
+              -#       %a.btn.btn-danger{"data-toggle" => "tooltip", :href => "#", :title => "Remove"}
+              -#         %i.icon.ion-ios-close-empty
+        .buttons.clearfix
+          .pull-right
+            %a.btn.btn-primary{:href => "#"} Continue

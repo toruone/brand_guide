@@ -31,29 +31,29 @@
         .col-sm-5
           %ul.breadcrumb
             %li
-              %a{:href => "#"}
+              %a{:href => "/"}
                 %i.icon.ion-ios-home-outline
             %li
-              %a{:href => "#"} Index
+              =link_to "Brands", brands_path
             %li
-              %a{:href => "#"} Brand Info
-          %h1 Brand Info
+              =@brand.name
+          %h1=@brand.name
           .table-responsive
             %table.table
               %tr
-                %td Brand Name:
-                %td=@brand.name
-
-              %tr
                 %td Country:
                 %td=@brand.country
+
               %tr
                 %td Since:
                 %td=@brand.since
               %tr
+                %td Description:
+                %td=@brand.description
+              %tr
                 %td HP URL:
                 %td
-                  =link_to "#{@brand.hp_url}"
+                  =link_to @brand.hp_url, @brand.hp_url, target: "_blank"
                 -# %%td
                 -#   %a#reviews{:href => ""} 2 reviews
 
