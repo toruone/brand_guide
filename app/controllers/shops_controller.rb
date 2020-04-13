@@ -31,7 +31,7 @@ class ShopsController < ApplicationController
   end
 
   def update
-    if @shop.update(brand_params)
+    if @shop.update(shop_params)
       redirect_to shops_path(@shop)
     else
       render "edit"
@@ -49,6 +49,9 @@ class ShopsController < ApplicationController
       :address,
       :image_cache,
       :image,
+      :image1,
+      :image2,
+      :image3,
       :remove_image,
     )
   end
