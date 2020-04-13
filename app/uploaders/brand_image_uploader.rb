@@ -24,7 +24,7 @@ class BrandImageUploader < CarrierWave::Uploader::Base
   # Process files as they are uploaded:
   # process scale: [200, 300]
   version :large do
-    process resize_to_limit: [nil, 800]
+    process resize_to_fit: [nil, 800]
   end
   # def scale(width, height)
   #   # do something
@@ -34,8 +34,12 @@ class BrandImageUploader < CarrierWave::Uploader::Base
   # version :thumb do
   #   process resize_to_fit: [50, 50]
   # end
-  version :thumb do
+  version :logo do
     process resize_and_pad: [263, 263]
+  end
+
+  version :thumb do
+    process resize_to_fill: [263, 263, "center"]
   end
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

@@ -48,7 +48,10 @@ class BrandsController < ApplicationController
       :since,
       :description,
       :image_cache,
-      :image,
+      :image_logo,
+      :image1,
+      :image2,
+      :image3,
       :remove_image,
       :hp_url,
     )

@@ -27,7 +27,17 @@ class ShopImageUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
+  version :logo do
+    process resize_and_pad: [263, 263]
+  end
 
+  version :large do
+    process resize_to_fit: [nil, 800]
+  end
+
+  version :thumb do
+    process resize_to_fill: [263, 263, "center"]
+  end
   # Create different versions of your uploaded files:
   # version :thumb do
   #   process resize_to_fit: [50, 50]

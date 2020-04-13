@@ -62,7 +62,7 @@
           %figure
             .image
               =link_to brand_path(brand) do
-                =image_tag brand.image_url(:thumb), class: 'img-responsive'
+                =image_tag brand.image_logo_url(:logo), class: 'img-responsive'
             %figcaption
               .name
                 =link_to brand.name, brand_path(brand)

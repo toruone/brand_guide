@@ -6,6 +6,9 @@
   ="Name："
   =link_to shop.name, shop_path(shop)
   %br
+  ="Brand"
+  =link_to shop.brand.name, brand_path(shop.brand)
+  %br
   ="Address："
   =shop.address
   %br

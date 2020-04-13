@@ -47,6 +47,7 @@ class ShopsController < ApplicationController
     params[:shop].permit(
       :name,
       :address,
+      :brand_id,
       :image_cache,
       :image,
       :image1,
