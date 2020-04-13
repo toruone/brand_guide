@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_051847) do
+ActiveRecord::Schema.define(version: 2020_04_13_060029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,11 +20,14 @@ ActiveRecord::Schema.define(version: 2020_04_13_051847) do
     t.string "country"
     t.integer "since"
     t.text "description"
-    t.string "image"
+    t.string "image_logo"
     t.string "hp_url"
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image1"
+    t.string "image2"
+    t.string "image3"
   end
 
   create_table "info_sites", force: :cascade do |t|
@@ -45,6 +48,9 @@ ActiveRecord::Schema.define(version: 2020_04_13_051847) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "shop_url"
+    t.string "image1"
+    t.string "image2"
+    t.string "image3"
   end
 
 end
