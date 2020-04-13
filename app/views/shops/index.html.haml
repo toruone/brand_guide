@@ -1,0 +1,22 @@
+%br
+%br
+%br
+%br
+-@shops.each do|shop|
+  ="Name："
+  =link_to shop.name, shop_path(shop)
+  %br
+  ="Address："
+  =shop.address
+  %br
+  -# ="Since："
+  -# =brand.since
+  -# %br
+  -# ="Description："
+  -# =brand.description
+  -# %br
+  -# ="HP URL："
+  -# =brand.hp_url
+  -# %hr
+
+=link_to "New Shop", new_shop_path

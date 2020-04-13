@@ -1,0 +1,8 @@
+=@shop.name
+=@shop.address
+=image_tag @shop.image_url, class: 'img-fluid'
+
+
+=link_to "一覧に戻る", shops_path
+=link_to "編集する", edit_shop_path(@shop)
+=link_to "削除する", shop_path(@shop), method: :delete, data: {confirm: "削除しますか？"}
