@@ -48,6 +48,7 @@ class ShopsController < ApplicationController
       :name,
       :address,
       :brand_id,
+      :shop_url,
       :image_cache,
       :image,
       :image1,
