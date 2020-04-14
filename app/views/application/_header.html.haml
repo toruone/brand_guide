@@ -3,13 +3,23 @@
     %a{:href => "/"} World Brands+
   %ul.list-unstyled
     %li
-      %a{:href => "/brands"} Brand
+      =link_to "Brand", brands_path
+      -# %a{:href => "/brands"} Brand
     %li
-      %a{:href => "#"} Shop
+      =link_to "Shop", shops_path
+      -# %a{:href => "#"} Shop
     %li
-      %a{:href => "/info_sites"} News Site
+      =link_to "Info Sites", info_sites_path
+      -# %a{:href => "/info_sites"} Info Site
     %li
-      %a{:href => "#"} Log in
+    -if user_signed_in?
+      %li
+        = link_to 'Logout', destroy_user_session_path
+    -else
+      %li
+        = link_to 'Login', new_user_session_path
+      %li
+        = link_to 'Sign Up', new_user_registration_path
     %li
       %a{:href => "#"} Contact Us
     -# %li
