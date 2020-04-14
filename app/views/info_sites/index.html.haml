@@ -33,12 +33,10 @@
           %tbody
             %tr
               %td.text-center
-                =link_to info_site_path(info_site) do
-                  -# %a{:href => "#"}
-                  =image_tag info_site.image_url(:small)
-                  -# %img{:alt => "", :src => "assets/img/image_holder_x90.png", :width => "90"}/
-                %td.text-left
-                  =link_to info_site.name, info_site_path(info_site)
+                =image_tag info_site.image_url(:small)
+                -# =link_to info_site.url, target: "_blank" do
+                -#   =image_tag info_site.image_url(:small)
+                %td.text-left=link_to info_site.name, info_site.url, target: "_blank"
                 %td.text-left=link_to info_site.url, info_site.url, target: "_blank"
                 %td.text-right=info_site.for
                 %td.text-left=info_site.description
