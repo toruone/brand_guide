@@ -1,0 +1,69 @@
+%h2 Log in
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .field
+    = f.label :email
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email"
+  .field
+    = f.label :password
+    %br/
+    = f.password_field :password, autocomplete: "current-password"
+  - if devise_mapping.rememberable?
+    .field
+      = f.check_box :remember_me
+      = f.label :remember_me
+  .actions
+    = f.submit "Log in"
+= render "devise/shared/links"
+
+
+.container
+  %ul.breadcrumb
+    %li
+      %a{:href => "#"}
+        %i.icon.ion-ios-home-outline
+    %li
+      %a{:href => "#"} Login
+  .row
+    #content.col-sm-12
+      .row
+        .col-sm-6
+          .well
+            %h2 Login
+            %br/
+            %br/
+            -# %form
+            = bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+              -# .form-group
+              =f.form_group :email do
+                .input-group
+                  %span.input-group-addon
+                    %i.glyphicon.glyphicon-user
+                    = f.email_field_without_bootstrap :email, autofocus: true, autocomplete: "email", placeholder: "E-Mail Address", class: "form-control"
+                  -# .form-control
+                  -#   = f.label :email
+                  -#   %br/
+                  -#   = f.email_field :email, autofocus: true, autocomplete: "email"
+                  -# %input#input-email.form-control{:name => "email", :placeholder => "E-Mail Address", :type => "text", :value => "E-Mail Address"}/
+
+
+              .form-group
+                .input-group
+                  %span.input-group-addon
+                    %i.glyphicon.glyphicon-lock
+                  -# .form-control
+                  -#   = f.label :password
+                  -#   %br/
+                  -#   = f.email_field :password, autofocus: true, autocomplete: "password"
+                  %input#input-password.form-control{:name => "password", :placeholder => "Password", :type => "password", :value => "Password"}/
+                .text-left
+                  %a{:href => "#"} Forgotten Password
+            %input.btn.btn-block.btn-primary{:type => "submit", :value => "Login"}/
+        .col-sm-6
+          .well
+            %h2 Sign Up
+            %br/
+            %br/
+            %p By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.
+            =link_to "continue", new_user_registration_path, class: "btn btn-default btn-block btn-register"
+            -# %a.btn.btn-default.btn-block.btn-register{:href => "#"} Continue
