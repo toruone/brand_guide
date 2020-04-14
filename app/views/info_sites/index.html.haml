@@ -27,6 +27,7 @@
             %td.text-left Name
             %td.text-left URL
             %td.text-right For
+            %td.text-left Description
             %td.text-right
         -@info_sites.each do |info_site |
           %tbody
@@ -40,6 +41,7 @@
                   =link_to info_site.name, info_site_path(info_site)
                 %td.text-left=link_to info_site.url, info_site.url, target: "_blank"
                 %td.text-right=info_site.for
+                %td.text-left=info_site.description
                 %td.text-right
                   -# %button.btn.btn-danger{"data-toggle" => "tooltip", :title => "Add to Cart", :type => "button"}
                   -#   %i.icon.ion-ios-cart-outline

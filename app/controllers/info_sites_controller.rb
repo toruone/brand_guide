@@ -46,6 +46,7 @@ class InfoSitesController < ApplicationController
       :name,
       :url,
       :for,
+      :description,
       :image_cache,
       :image,
       :remove_image,
