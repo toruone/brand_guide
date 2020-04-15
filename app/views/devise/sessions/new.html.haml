@@ -52,7 +52,7 @@
                 .input-group
                   %span.input-group-addon
                     %i.glyphicon.glyphicon-lock
-                  = f.email_field_without_bootstrap :password, autocomplete: "current-password", placeholder: "Password", class: "form-control"
+                  = f.password_field_without_bootstrap :password, autocomplete: "current-password", placeholder: "Password", class: "form-control"
                   -# %input#input-password.form-control{:name => "password", :placeholder => "Password", :type => "password", :value => "Password"}/
                 .text-left
                   = render "devise/shared/links"
