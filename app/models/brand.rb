@@ -4,5 +4,7 @@ class Brand < ApplicationRecord
   mount_uploader :image2, BrandImageUploader
   mount_uploader :image3, BrandImageUploader
 
+  has_many :brand_users, dependent: :destroy
+  has_many :users, through: :brand_users
   has_many :shops
 end
