@@ -19,3 +19,66 @@
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"
+
+
+.container
+  %ul.breadcrumb
+    %li
+      %a{:href => "/"}
+        %i.icon.ion-ios-home-outline
+    %li
+      =link_to "Login", new_user_session_path
+    %li
+      Sign Up
+  .row
+    .col-sm-12
+      %h1 Sign Up
+      %p
+        If you already have account with us, please login at the→
+        = succeed "." do
+          =link_to "Login Page", new_user_session_path
+          -# %a{:href => "#"} login page
+      %form.form-horizontal
+        %fieldset#account
+          %legend Your E-mail & Password
+          = bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            =f.form_group :email, class: "required" do
+              -# .form-group.required
+              %label.col-sm-2.control-label{:for => "input-email"} E-Mail
+              .col-sm-10
+                = f.email_field_without_bootstrap :email, autofocus: true, autocomplete: "email", placeholder: "E-Mail Address", class: "form-control"
+                -# .col-sm-10
+                -#   %input#input-email.form-control{:name => "email", :placeholder => "E-Mail", :type => "text", :value => ""}/
+            =f.form_group :password, class: "required" do
+              -# .form-group.required
+              %label.col-sm-2.control-label{:for => "input-password"} Password
+              .col-sm-10
+                = f.email_field_without_bootstrap :password, autofocus: true, autocomplete: "new-password", placeholder: "Password", class: "form-control"
+                -# %input#input-password.form-control{:name => "password", :placeholder => "Password", :type => "password", :value => ""}/
+            =f.form_group :password_confirmation, class: "required" do
+              -# .form-group.required
+              %label.col-sm-2.control-label{:for => "input-confirm"} Password Confirm
+              .col-sm-10
+                = f.email_field_without_bootstrap :password_confirmation, autofocus: true, autocomplete: "new-password", placeholder: "Password", class: "form-control"
+              -# %input#input-confirm.form-control{:name => "confirm", :placeholder => "Password Confirm", :type => "password", :value => ""}/
+
+
+        -# %fieldset
+        -#   %legend Your Password
+        -#   .form-group.required
+        -#     %label.col-sm-2.control-label{:for => "input-password"} Password
+        -#     .col-sm-10
+        -#       %input#input-password.form-control{:name => "password", :placeholder => "Password", :type => "password", :value => ""}/
+        -#   .form-group.required
+        -#     %label.col-sm-2.control-label{:for => "input-confirm"} Password Confirm
+        -#     .col-sm-10
+        -#       %input#input-confirm.form-control{:name => "confirm", :placeholder => "Password Confirm", :type => "password", :value => ""}/
+
+        .buttons
+          .pull-right
+            -# I have read and agree to the
+            -# %a.agree{:href => "#"} Privacy Policy
+            -# = succeed "\u{a0}" do
+            -#   %input{:name => "agree", :type => "checkbox", :value => "1"}/
+            =link_to "continue", user_registration_path, class: "btn btn-primary"
+            -# %input.btn.btn-primary{:type => "submit", :value => "Continue"}/
