@@ -1,0 +1,194 @@
+.container
+  %ul.breadcrumb
+    %li
+      %a{:href => "#"}
+        %i.icon.ion-ios-home-outline
+    %li
+      %a{:href => "#"} Login
+    %li
+      %a{:href => "#"} MyPage
+
+  -@favorite_brands.each do |brand|
+    =brand.name
+
+
+  %h2 My Info Sites
+  .row
+    #content.col-sm-12
+      .row
+        -@favorite_sites.each do |site|
+          .refine-search.col-xs-4.col-md-2
+            %figure
+              .image
+                =link_to site.url do
+                  =image_tag site.image_url(:thumb), target: "_blank", class: 'img-responsive'
+              %figcaption
+                .name=site.name
+            -# .refine-search-link=site.name
+            -# %figcaption
+            -#   .name brand.name
+            -#   .price brand.country
+            -# -# %a{:href => "#"}
+            -# -#   %img.img-responsive{:alt => "", :src => "assets/img/refine-search-empty.png", :title => ""}/
+            -# .refine-search-link=site.name
+          -# .refine-search.col-xs-4.col-md-2
+          -#   %a{:href => "#"}
+          -#     %img.img-responsive{:alt => "", :src => "assets/img/refine-search-empty.png", :title => ""}/
+          -#   %a.refine-search-link{:href => "#"} Link 2
+          -# .refine-search.col-xs-4.col-md-2
+          -#   %a{:href => "#"}
+          -#     %img.img-responsive{:alt => "", :src => "assets/img/refine-search-empty.png", :title => ""}/
+          -#   %a.refine-search-link{:href => "#"} Link 3
+          -# .refine-search.col-xs-4.col-md-2
+          -#   %a{:href => "#"}
+          -#     %img.img-responsive{:alt => "", :src => "assets/img/refine-search-empty.png", :title => ""}/
+          -#   %a.refine-search-link{:href => "#"} Link 4
+          -# .refine-search.col-xs-4.col-md-2
+          -#   %a{:href => "#"}
+          -#     %img.img-responsive{:alt => "", :src => "assets/img/refine-search-empty.png", :title => ""}/
+          -#   %a.refine-search-link{:href => "#"} Link 5
+          -# .refine-search.col-xs-4.col-md-2
+          -#   %a{:href => "#"}
+          -#     %img.img-responsive{:alt => "", :src => "assets/img/refine-search-empty.png", :title => ""}/
+          -#   %a.refine-search-link{:href => "#"} Link 6
+      %br/
+      %h2 My Brands
+      .row
+        .col-md-4
+          %a#compare-total.btn.btn-default.btn-block{:href => "#"} Product Compare (0)
+        .col-md-4.text-right
+          %select#input-sort.form-control
+            %option{:selected => "selected", :value => ""} Default
+            %option{:value => ""} Name
+            %option{:value => ""} Date
+        .col-md-4.text-right
+          %select#input-limit.form-control
+            %option{:selected => "selected", :value => ""} 8
+            %option{:value => ""} 15
+            %option{:value => ""} 25
+            %option{:value => ""} 50
+            %option{:value => ""} 100
+      %br/
+      .row
+        -@favorite_brands.each do |brand|
+          .product-layout.product-grid.col-xs-6.col-sm-4.col-md-3
+            .product-thumb
+              .sale{"data-placement" => "top", "data-toggle" => "tooltip", :title => "Sale"}
+              %figure
+                .image
+                  =link_to brand_path(brand) do
+                    =image_tag brand.image_logo_url(:logo), class: 'img-responsive'
+                  -# %a{:href => "#"}
+                  -#   %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+                %figcaption
+                  .name=brand.name
+                  .price=brand.country
+
+        -# / / Product Item
+        -# / Product Item
+        -# .product-layout.product-grid.col-xs-6.col-sm-4.col-md-3
+        -#   .product-thumb
+        -#     %figure
+        -#       .image
+        -#         %a{:href => "#"}
+        -#           %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+        -#       %figcaption
+        -#         .name
+        -#           %a{:href => "#"} Oversized Shirt
+        -#         .price
+        -#           $122.00
+        -# / / Product Item
+        -# / Product Item
+        -# .product-layout.product-grid.col-xs-6.col-sm-4.col-md-3
+        -#   .product-thumb
+        -#     .sale{"data-placement" => "top", "data-toggle" => "tooltip", :title => "Sale"}
+        -#     %figure
+        -#       .image
+        -#         %a{:href => "#"}
+        -#           %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+        -#       %figcaption
+        -#         .name
+        -#           %a{:href => "#"} Plaid Boyfriend Shirt
+        -#         .price
+        -#           $122.00
+        -# / / Product Item
+        -# / Product Item
+        -# .product-layout.product-grid.col-xs-6.col-sm-4.col-md-3
+        -#   .product-thumb
+        -#     %figure
+        -#       .image
+        -#         %a{:href => "#"}
+        -#           %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+        -#       %figcaption
+        -#         .name
+        -#           %a{:href => "#"} Cropped Open Back Shirt
+        -#         .price
+        -#           $1,202.00
+        -# / / Product Item
+        -# / Product Item
+        -# .product-layout.product-grid.col-xs-6.col-sm-4.col-md-3
+        -#   .product-thumb
+        -#     %figure
+        -#       .image
+        -#         %a{:href => "#"}
+        -#           %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+        -#       %figcaption
+        -#         .name
+        -#           %a{:href => "#"} Star Print Americana Sweater
+        -#         .price
+        -#           $241.99
+        -# / / Product Item
+        -# / Product Item
+        -# .product-layout.product-grid.col-xs-6.col-sm-4.col-md-3
+        -#   .product-thumb
+        -#     %figure
+        -#       .image
+        -#         %a{:href => "#"}
+        -#           %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+        -#       %figcaption
+        -#         .name
+        -#           %a{:href => "#"} Oversized Shirt
+        -#         .price
+        -#           $122.00
+        -# / / Product Item
+        -# / Product Item
+        -# .product-layout.product-grid.col-xs-6.col-sm-4.col-md-3
+        -#   .product-thumb
+        -#     %figure
+        -#       .image
+        -#         %a{:href => "#"}
+        -#           %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+        -#       %figcaption
+        -#         .name
+        -#           %a{:href => "#"} Plaid Boyfriend Shirt
+        -#         .price
+        -#           $122.00
+        -# / / Product Item
+        -# / Product Item
+        -# .product-layout.product-grid.col-xs-6.col-sm-4.col-md-3
+        -#   .product-thumb
+        -#     .sale{"data-placement" => "top", "data-toggle" => "tooltip", :title => "Sale"}
+        -#     %figure
+        -#       .image
+        -#         %a{:href => "#"}
+        -#           %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+        -#       %figcaption
+        -#         .name
+        -#           %a{:href => "#"} Cropped Open Back Shirt
+        -#         .price
+        -#           $1,202.00
+        / / Product Item
+      .row
+        .col-sm-6.text-left
+          %nav
+            %ul.pagination
+              %li.active
+                %a{:href => "#"} 1
+              %li
+                %a{:href => "#"} 2
+              %li
+                %a{:href => "#"} >
+              %li
+                %a{:href => "#"} >|
+        .col-sm-6.text-right.results
+          Showing 1 to 8 of 12 (2 page)
