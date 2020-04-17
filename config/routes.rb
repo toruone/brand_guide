@@ -2,11 +2,16 @@ Rails.application.routes.draw do
   devise_for :users
   get 'shops/show'
   root to: "brands#index"
+
   resources :brands do
     resource :brand_users, only: [:create, :destroy]
   end
-  resources :info_sites
+
+  resources :info_sites do
+    resource :info_users, only: [:create, :destroy]
+  end
   resources :shops
+
 
 
 end
