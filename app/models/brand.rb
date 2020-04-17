@@ -7,4 +7,8 @@ class Brand < ApplicationRecord
   has_many :brand_users, dependent: :destroy
   has_many :users, through: :brand_users
   has_many :shops
+
+  def favorited_by?(user)
+    brand_users.where(user_id: user.id).exists?
+  end
 end
