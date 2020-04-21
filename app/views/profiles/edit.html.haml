@@ -104,7 +104,13 @@
               =f.label 'image', class: 'col-sm-2 control-label required'
               .col-sm-10
                 =f.file_field_without_bootstrap :image, class: 'form-control col-sm-5'
-          
+                -if @profile.image?
+                  .js-image-preview.m-t-5
+                    =image_tag @profile.image_url(:thumb)
+                    .checkbox.checkbox-primary.m-t-5
+                      =f.check_box_without_bootstrap :remove_image
+                      =f.label :remove_image, 'Image Delete'
+
             .buttons
               .pull-right
                 = f.submit "Save", class: 'btn btn-primary'
