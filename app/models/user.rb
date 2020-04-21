@@ -8,4 +8,5 @@ class User < ApplicationRecord
 
   has_many :info_users, dependent: :destroy
   has_many :info_sites, through: :info_users
+  has_one :profile
 end

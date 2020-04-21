@@ -10,9 +10,11 @@ Rails.application.routes.draw do
   resources :info_sites do
     resource :info_users, only: [:create, :destroy]
   end
-  resources :shops
 
-  resources :mypages, only: [:index]
+  resources :shops
+  resource :mypage, only: [:show] do 
+    resource :profile, only: [:create, :edit, :update]
+  end
 
 end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

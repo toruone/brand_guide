@@ -6,7 +6,7 @@
     %li
       %a{:href => "#"} Login
     %li
-      %a{:href => "#"} MyPage
+      %a{:href => "#"} My Page
 
   -@favorite_brands.each do |brand|
     =brand.name
@@ -54,8 +54,6 @@
       %br/
       %h2 My Brands
       .row
-        .col-md-4
-          %a#compare-total.btn.btn-default.btn-block{:href => "#"} Product Compare (0)
         .col-md-4.text-right
           %select#input-sort.form-control
             %option{:selected => "selected", :value => ""} Default

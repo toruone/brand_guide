@@ -1,0 +1,110 @@
+-# .container
+-#   %ul.breadcrumb
+-#     %li
+-#       %a{:href => "/"}
+-#         %i.icon.ion-ios-home-outline
+-#     %li
+-#       %a{:href => "#"} Login
+-#     %li
+-#       %a{:href => "#"} My Profile
+-#   .row
+-#     .col-sm-12
+-#       %h1 My Profile
+-#       %form.form-horizontal
+-#         %fieldset#account
+-#           %legend Your personal details
+-#           .form-group.required
+-#             %label.col-sm-2.control-label{:for => "input-firstname"} First Name
+-#             .col-sm-10
+-#               %input#input-firstname.form-control{:name => "firstname", :placeholder => "First Name", :type => "text", :value => ""}/
+-#           .form-group.required
+-#             %label.col-sm-2.control-label{:for => "input-lastname"} Last Name
+-#             .col-sm-10
+-#               %input#input-lastname.form-control{:name => "lastname", :placeholder => "Last Name", :type => "text", :value => ""}/
+-#           .form-group.required
+-#             %label.col-sm-2.control-label{:for => "input-country"} Country
+-#             .col-sm-10
+-#               %input#input-lastname.form-control{:name => "country", :placeholder => "Country", :type => "text", :value => ""}/
+-#
+-#         %fieldset#address
+-#           %legend Your Address
+-#           .form-group
+-#             %label.col-sm-2.control-label{:for => "input-company"} Company
+-#             .col-sm-10
+-#               %input#input-company.form-control{:name => "company", :placeholder => "Company", :type => "text", :value => ""}/
+-#           .form-group.required
+-#             %label.col-sm-2.control-label{:for => "input-address-1"} Address 1
+-#             .col-sm-10
+-#               %input#input-address-1.form-control{:name => "address-1", :placeholder => "Address 1", :type => "text", :value => ""}/
+-#           .form-group
+-#             %label.col-sm-2.control-label{:for => "input-address-2"} Address 2
+-#             .col-sm-10
+-#               %input#input-address-2.form-control{:name => "address-2", :placeholder => "Address 2", :type => "text", :value => ""}/
+-#           .form-group.required
+-#             %label.col-sm-2.control-label{:for => "input-city"} City
+-#             .col-sm-10
+-#               %input#input-city.form-control{:name => "city", :placeholder => "City", :type => "text", :value => ""}/
+-#           .form-group.required
+-#             %label.col-sm-2.control-label{:for => "input-postcode"} City
+-#             .col-sm-10
+-#               %input#input-postcode.form-control{:name => "postcode", :placeholder => "Post Code", :type => "text", :value => ""}/
+-#           .form-group.required
+-#             %label.col-sm-2.control-label{:for => "input-country"} Country
+-#             .col-sm-10
+-#               %select#input-country.form-control{:name => "country_id"}
+-#                 %option{:value => ""} Select your country
+-#                 %option{:value => ""} Australia
+-#                 %option{:value => ""} Belgium
+-#                 %option{:value => ""} France
+-#                 %option{:value => ""} United Kingdom
+-#                 %option{:value => ""} USA
+-#           .form-group.required
+-#             %label.col-sm-2.control-label{:for => "input-region"} Region / State
+-#             .col-sm-10
+-#               %select#input-region.form-control{:name => "region_id"}
+-#                 %option{:value => ""} Select your region
+-#
+-#         .buttons
+-#           .pull-right
+-#             -# I have read and agree to the
+-#             -# %a.agree{:href => "#"} Privacy Policy
+-#             -# = succeed "\u{a0}" do
+-#             -#   %input{:name => "agree", :type => "checkbox", :value => "1"}/
+-#             %input.btn.btn-primary{:type => "submit", :value => "Save"}/
+
+.container
+  %ul.breadcrumb
+    %li
+      =link_to root_path do
+        %i.icon.ion-ios-home-outline
+    %li
+      =link_to 'My Page', mypage_path
+    %li My Profile
+
+  .row
+    .col-sm-12
+      %h1 My Profile
+      .form-horizontal
+        %fieldset#account
+          -# %legend Your personal details
+          =bootstrap_form_with model: [:mypage, @profile], url: mypage_profile_path, local: true do |f|
+            =f.form_group :first_name do
+              =f.label 'First Name', class: 'col-sm-2 control-label required'
+              .col-sm-10
+                =f.text_field_without_bootstrap :first_name, placeholder: 'first Name', class: 'form-control col-sm-5'
+            =f.form_group :last_name do
+              =f.label 'Last Name', class: 'col-sm-2 control-label required'
+              .col-sm-10
+                =f.text_field_without_bootstrap :last_name, placeholder: 'Last Name', class: 'form-control col-sm-5'
+            =f.form_group :country do
+              =f.label 'Country', class: 'col-sm-2 control-label required'
+              .col-sm-10
+                =f.text_field_without_bootstrap :country, placeholder: 'Country', class: 'form-control col-sm-5'
+            =f.form_group :image do
+              =f.label 'image', class: 'col-sm-2 control-label required'
+              .col-sm-10
+                =f.file_field_without_bootstrap :image, class: 'form-control col-sm-5'
+          
+            .buttons
+              .pull-right
+                = f.submit "Save", class: 'btn btn-primary'
