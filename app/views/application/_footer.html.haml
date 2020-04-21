@@ -3,62 +3,70 @@
     .row
       .col-sm-2
         .btn-group.dropup.info
-          %button.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
-            %i.icon.ion-ios-information-outline
+          =link_to brands_path do
+            %i.icon.ion-ios-home-outline
             %span Home
-          %ul.dropdown-menu.pull-right
-            %li.dropdown-triangle
-            %li
-              %a{:href => "#"} About Us
-            %li
-              %a{:href => "#"} Delivery Information
-            %li
-              %a{:href => "#"} Privacy Policy
-            %li
-              %a{:href => "#"} Terms & Conditions
+          -# %ul.dropdown-menu.pull-right
+          -#   %li.dropdown-triangle
+          -#   %li
+          -#     %a{:href => "#"} About Us
+          -#   %li
+          -#     %a{:href => "#"} Delivery Information
+          -#   %li
+          -#     %a{:href => "#"} Privacy Policy
+          -#   %li
+          -#     %a{:href => "#"} Terms & Conditions
       .col-sm-2
         .btn-group.dropup.service
-          %button.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
-            %i.icon.ion-ios-people-outline
+          -# %button.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+          =link_to brands_path do
+            %i.icon.ion-ios-pricetags-outline
             %span Brands
-          %ul.dropdown-menu.pull-right
-            %li.dropdown-triangle
-            %li
-              %a{:href => "#"} Contact Us
-            %li
-              %a{:href => "#"} Returns
-            %li
-              %a{:href => "#"} Site Map
+          -# %ul.dropdown-menu.pull-right
+          -#   %li.dropdown-triangle
+          -#   %li
+          -#     %a{:href => "#"} Contact Us
+          -#   %li
+          -#     %a{:href => "#"} Returns
+          -#   %li
+          -#     %a{:href => "#"} Site Map
       .col-sm-2
         .btn-group.dropup.extra
-          %button.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
-            %i.icon.ion-ios-flask-outline
+          -# %button.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+          =link_to info_sites_path do
+            %i.icon.ion-ios-monitor-outline
             %span Info Sites
-          %ul.dropdown-menu.pull-right
-            %li.dropdown-triangle
-            %li
-              %a{:href => "#"} Brands
-            %li
-              %a{:href => "#"} Gift Vouchers
-            %li
-              %a{:href => "#"} Affiliates
-            %li
-              %a{:href => "#"} Specials
+          -# %ul.dropdown-menu.pull-right
+          -#   %li.dropdown-triangle
+          -#   %li
+          -#     %a{:href => "#"} Brands
+          -#   %li
+          -#     %a{:href => "#"} Gift Vouchers
+          -#   %li
+          -#     %a{:href => "#"} Affiliates
+          -#   %li
+          -#     %a{:href => "#"} Specials
       .col-sm-2
         .btn-group.dropup.user-account
-          %button.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
-            %i.icon.ion-ios-person-outline
-            %span Log In
-          %ul.dropdown-menu.pull-right
-            %li.dropdown-triangle
-            %li
-              %a{:href => "#"} My Account
-            %li
-              %a{:href => "#"} Order History
-            %li
-              %a{:href => "#"} Wishlist
-            %li
-              %a{:href => "#"} Newsletter
+          -# %button.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+          -if user_signed_in?
+            =link_to destroy_user_session_path do
+              %i.icon.ion-ios-person-outline
+              %span Log Out
+          -else
+            =link_to new_user_session_path do
+              %i.icon.ion-ios-person-outline
+              %span Log In
+          -# %ul.dropdown-menu.pull-right
+          -#   %li.dropdown-triangle
+          -#   %li
+          -#     %a{:href => "#"} My Account
+          -#   %li
+          -#     %a{:href => "#"} Order History
+          -#   %li
+          -#     %a{:href => "#"} Wishlist
+          -#   %li
+          -#     %a{:href => "#"} Newsletter
       .col-sm-2
         .btn-group.dropup.social
           %button.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
@@ -81,8 +89,7 @@
       .col-sm-2
         .btn-group.dropup.powered
           %button.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
-            %i.icon.ion-ios-mail-outline
-            %i.icon.ion-ios-bolt-outline
+            %i.icon.ion-ios-email-outline
             %span Contact Us
           -# %ul.dropdown-menu.pull-right
           -#   %li.dropdown-triangle
