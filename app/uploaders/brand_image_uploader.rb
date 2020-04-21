@@ -41,6 +41,10 @@ class BrandImageUploader < CarrierWave::Uploader::Base
   version :thumb do
     process resize_to_fill: [263, 263, "center"]
   end
+
+  version :top do
+    process resize_to_fill: [1500, 698, "center"]
+  end
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   # def extension_whitelist

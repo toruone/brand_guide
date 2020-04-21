@@ -3,11 +3,8 @@
     %a{:href => "/"} World Brands+
   %ul.list-unstyled
     %li
-      =link_to "Brand", brands_path
+      =link_to "Brands", brands_path
       -# %a{:href => "/brands"} Brand
-    %li
-      =link_to "Shop", shops_path
-      -# %a{:href => "#"} Shop
     %li
       =link_to "Info Sites", info_sites_path
       -# %a{:href => "/info_sites"} Info Site
@@ -70,12 +67,12 @@
                     %input.form-control{:name => "search", :type => "text", :value => ""}/
                     .input-group-btn
                       %button.btn.btn-default{:type => "button"} Search
-          .shopping-bag.pull-right
-            .btn-group
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                %i.icon.ion-bag{"data-container" => "body", "data-placement" => "bottom", "data-toggle" => "tooltip", :title => "Shopping Bag"}
-                %strong.counter 0
-              %ul.dropdown-menu.pull-right
-                %li.dropdown-triangle
-                %li
-                  %p.empty.text-center Your shopping cart is empty!
+          -# .shopping-bag.pull-right
+          -#   .btn-group
+          -#     %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+          -#       %i.icon.ion-bag{"data-container" => "body", "data-placement" => "bottom", "data-toggle" => "tooltip", :title => "Shopping Bag"}
+          -#       %strong.counter 0
+          -#     %ul.dropdown-menu.pull-right
+          -#       %li.dropdown-triangle
+          -#       %li
+          -#         %p.empty.text-center Your shopping cart is empty!
