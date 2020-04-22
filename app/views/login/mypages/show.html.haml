@@ -1,0 +1,40 @@
+.container
+  %ul.breadcrumb
+    %li
+      %a{:href => "#"}
+        %i.icon.ion-ios-home-outline
+    %li
+      %a{:href => "#"} Login
+    %li
+      %a{:href => "#"} My Page
+
+  .row
+    #content.col-sm-12
+      .info_site_section
+        %h2 My Info Sites
+        .row
+          -@favorite_sites.each do |site|
+            .product-layout.product-grid.refine-search.col-xs-4.col-md-2
+              .product-thumb
+                %figure
+                  .image
+                    =link_to site.url do
+                      =image_tag site.image_url(:thumb), target: "_blank", class: 'img-responsive'
+                  %figcaption
+                    .name=site.name
+      .brand_section
+        %h2 My Brands
+        .row
+          -@favorite_brands.each do |brand|
+            .product-layout.product-grid.col-xs-6.col-sm-4.col-md-3
+              .product-thumb
+                %figure
+                  .image
+                    =link_to brand_path(brand) do
+                      =image_tag brand.image_logo_url(:logo), class: 'img-responsive'
+                    -# %a{:href => "#"}
+                    -#   %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+                  %figcaption
+                    .name=brand.name
+                    .price=brand.country
+      =paginate @favorite_brands

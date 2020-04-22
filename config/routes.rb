@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   end
 
   resources :shops
-  resource :mypage, only: [:show] do 
-    resource :profile, only: [:create, :edit, :update]
+  namespace :login do
+    resource :mypage, only: [:show] do
+      resource :profile, only: [:create, :edit, :update]
+    end
   end
 
 end

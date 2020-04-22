@@ -1,4 +1,4 @@
-class ProfilesController < ApplicationController
+class Login::ProfilesController < Login::ApplicationController
   before_action :set_profile, only: [:edit, :update]
 
 
@@ -6,18 +6,18 @@ class ProfilesController < ApplicationController
   def create
     @profile = current_user.build_profile(profile_params)
     if @profile.save
-     redirect_to edit_mypage_profile_path, notice: 'Your profile has been successfully saved.'
+     redirect_to edit_login_mypage_profile_path, notice: 'Your profile has been successfully saved.'
     else
      render 'edit'
     end
   end
 
   def edit
-  end 
+  end
 
   def update
     if @profile.update(profile_params)
-      redirect_to edit_mypage_profile_path, notice: 'Your profile has been successfully saved.'
+      redirect_to edit_login_mypage_profile_path, notice: 'Your profile has been successfully saved.'
     else
       render 'edit'
     end

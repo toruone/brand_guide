@@ -78,7 +78,7 @@
       =link_to root_path do
         %i.icon.ion-ios-home-outline
     %li
-      =link_to 'My Page', mypage_path
+      =link_to 'My Page', login_mypage_path
     %li My Profile
 
   .row
@@ -87,7 +87,7 @@
       .form-horizontal
         %fieldset#account
           -# %legend Your personal details
-          =bootstrap_form_with model: [:mypage, @profile], url: mypage_profile_path, local: true do |f|
+          =bootstrap_form_with model: [:mypage, @profile], url: login_mypage_profile_path, local: true do |f|
             =f.form_group :first_name do
               =f.label 'First Name', class: 'col-sm-2 control-label required'
               .col-sm-10

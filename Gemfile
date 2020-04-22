@@ -26,6 +26,7 @@ gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'kaminari'
 gem 'devise'
 
 # Use Active Storage variant

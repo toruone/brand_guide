@@ -1,0 +1,9 @@
+.brand_section{
+  margin-top: 70px;
+}
+
+#slideshow img{
+  width: 1500px;
+  height: 698px;
+  object-fit: cover;
+}
