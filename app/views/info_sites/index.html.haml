@@ -18,6 +18,9 @@
   .row
     #content.col-sm-12
       %h2 Information Sites
+      .buttons.clearfix
+        .pull-right
+          =link_to "login", new_user_session_path, class: "btn btn-primary"
       %br
       %br
       %table.table
@@ -28,7 +31,7 @@
             %td.text-left URL
             %td.text-right For
             %td.text-left Description
-            %td.text-right
+            %td.text-left
         -@info_sites.each do |info_site |
           %tbody
             %tr
@@ -45,12 +48,17 @@
                   -#   %i.icon.ion-ios-cart-outline
                   -# %a.btn.btn-danger{"data-toggle" => "tooltip", :href => "#", :title => "Remove"}
                   -#   %i.icon.ion-ios-close-empty
-                  -if info_site.favorited_by?(current_user)
-                    .buttons.clearfix
-                      .pull-right
-                        =link_to "Delete from MyPage", info_site_info_users_path(info_site), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-default"
-                  -else
-                    .buttons.clearfix
-                      .pull-right
-                        =link_to "Register to MyPage", info_site_info_users_path(info_site), method: :post, class: "btn btn-primary"
+                  -if user_signed_in?
+                    -if info_site.favorited_by?(current_user)
+                      .buttons.clearfix
+                        .pull-right
+                          =link_to "Delete from MyPage", info_site_info_users_path(info_site), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-default"
+                    -else
+                      .buttons.clearfix
+                        .pull-right
+                          =link_to "Register to MyPage", info_site_info_users_path(info_site), method: :post, class: "btn btn-primary"
                       -# %a.btn.btn-primary{:href => "#"} Register to MyPage
+                  -# -else
+                  -#   .buttons.clearfix
+                  -#     .pull-right
+                  -#       =link_to "login", new_user_session_path, class: "btn btn-primary"

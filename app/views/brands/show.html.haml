@@ -73,18 +73,28 @@
           -#     %span.input-group-btn
           -#       %button.btn.btn-default{:type => "button"}
           -#         %i.icon.ion-ios-calendar-outline
-          -if @brand.favorited_by?(current_user)
-            .form-group
-              %br/
-              =link_to brand_brand_users_path(@brand), method: :delete, data: {confirm: "削除しますか？"} do
-                %button#button-cart.btn.btn-lg.btn-default.btn-block{"data-loading-text" => "Loading...", :type => "button"} Delete from MyPage
+          -if user_signed_in?
+            -if @brand.favorited_by?(current_user)
+              .form-group
+                %br/
+                =link_to brand_brand_users_path(@brand), method: :delete, data: {confirm: "削除しますか？"} do
+                  %button#button-cart.btn.btn-lg.btn-default.btn-block{"data-loading-text" => "Loading...", :type => "button"} Delete from MyPage
+            -else
+              .form-group
+                -# %label.control-label{:for => "input-quantity"} Qty
+                -# %input#input-quantity.form-control{:name => "quantity", :size => "2", :type => "text", :value => "1"}/
+                %br/
+                =link_to brand_brand_users_path(@brand), method: :post do
+                  %button#button-cart.btn.btn-lg.btn-primary.btn-block{"data-loading-text" => "Loading...", :type => "button"} Register on MyPage
           -else
             .form-group
               -# %label.control-label{:for => "input-quantity"} Qty
               -# %input#input-quantity.form-control{:name => "quantity", :size => "2", :type => "text", :value => "1"}/
               %br/
-              =link_to brand_brand_users_path(@brand), method: :post do
-                %button#button-cart.btn.btn-lg.btn-primary.btn-block{"data-loading-text" => "Loading...", :type => "button"} Register on MyPage
+              ※If you want to add to my page, you need to log in ↓
+              %br
+              =link_to new_user_session_path do
+                %button#button-cart.btn.btn-lg.btn-primary.btn-block{"data-loading-text" => "Loading...", :type => "button"} Log in
 
 
   / Related Products
