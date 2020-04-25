@@ -4,7 +4,8 @@ class BrandsController < ApplicationController
   end
 
   def index
-    @brands = Brand.all
+    @q = Brand.ransack(params[:q])
+    @brands = @q.result(distinct: true)
   end
 
   def create

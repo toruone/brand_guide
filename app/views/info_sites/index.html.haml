@@ -52,7 +52,7 @@
                     -if info_site.favorited_by?(current_user)
                       .buttons.clearfix
                         .pull-right
-                          =link_to "Delete from MyPage", info_site_info_users_path(info_site), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-default"
+                          =link_to "Delete from MyPage", info_site_info_users_path(info_site), method: :delete, data: {confirm: "Delete OK？"}, class: "btn btn-default"
                     -else
                       .buttons.clearfix
                         .pull-right

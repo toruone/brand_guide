@@ -56,17 +56,27 @@
                       =link_to "Log In", new_user_session_path
                     %li
                       =link_to "Sign Up", new_user_registration_path
-          .search.pull-right
-            .btn-group
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                %i.icon.ion-ios-search-strong{"data-container" => "body", "data-placement" => "bottom", "data-toggle" => "tooltip", :title => "Search"}
-              %ul.dropdown-menu.pull-right
-                %li.dropdown-triangle
-                %li
-                  .input-group
-                    %input.form-control{:name => "search", :type => "text", :value => ""}/
-                    .input-group-btn
-                      %button.btn.btn-default{:type => "button"} Search
+
+          -if current_page?(brands_path)
+            .search.pull-right
+              .btn-group
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  %i.icon.ion-ios-search-strong{"data-container" => "body", "data-placement" => "bottom", "data-toggle" => "tooltip", :title => "Search"}
+                %ul.dropdown-menu.pull-right
+                  %li.dropdown-triangle
+                  %li
+                    = search_form_for @q do |f|
+                      .input-group
+                        = f.search_field :name_cont, class: "form-control"
+                        -# %input.form-control{:name => "search", :type => "text", :value => ""}/
+                        .input-group-btn
+                          -# %button.btn.btn-default{:type => "button"} Search
+                          = f.submit "Search", class: "btn btn-default"
+-# = search_form_for @q do |f|
+-#   = f.label :name, "Keyword"
+-#   = f.search_field :name_cont
+-#   = f.submit "検索", class: "actions"
+
           -# .shopping-bag.pull-right
           -#   .btn-group
           -#     %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}

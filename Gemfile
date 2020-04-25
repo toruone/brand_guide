@@ -27,6 +27,7 @@ gem 'jquery-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
+gem 'ransack'
 gem 'devise'
 
 # Use Active Storage variant

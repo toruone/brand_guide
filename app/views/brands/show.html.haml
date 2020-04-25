@@ -77,7 +77,7 @@
             -if @brand.favorited_by?(current_user)
               .form-group
                 %br/
-                =link_to brand_brand_users_path(@brand), method: :delete, data: {confirm: "削除しますか？"} do
+                =link_to brand_brand_users_path(@brand), method: :delete, data: {confirm: "Delete OK？"} do
                   %button#button-cart.btn.btn-lg.btn-default.btn-block{"data-loading-text" => "Loading...", :type => "button"} Delete from MyPage
             -else
               .form-group

@@ -17,8 +17,6 @@
 -#
 -# =link_to "New Brand", new_brand_path
 
-
-
 / Slideshow
 .container-fluid.nopadding
   .row
@@ -32,26 +30,7 @@
           %img{:alt => "", :src => "img/top_pic2.jpg"}/
         .item
           %img{:alt => "", :src => "img/top_pic7.jpg"}/
-/ / Slideshow
--# .container.showcase
--#   .row
--#     -@brands.each do |brand|
--#       .product-grid.col-xs-6.col-sm-3
--#         .product-thumb{"data-sr" => ""}
--#           %figure
--#             =link_to brand_path(brand), class: "item-wrap fancybox" do
--#               .image
--#                 -# %h3=brand.name
--#                 -# %span=brand.country
--#               -if brand.image.present?
--#                 =image_tag brand.image_url, class: 'img-responsive'
--#               -else
--#                 %img.img-fluid{:src => "assets/img/image_holder_x263.png"}/
--#               %figcaption
--#                 .name
--#                   %a{:href => "#"}=brand.name
--#                 .price
--#                   =brand.country
+
 
 .container.showcase
   .row
@@ -69,6 +48,13 @@
                 -# %a{:href => "#"} Oversized Shirt
               .price
                 =brand.country
+
+
+-# = search_form_for @q do |f|
+-#   = f.label :name, "Keyword"
+-#   = f.search_field :name_cont
+-#   = f.submit "検索", class: "actions"
+
   -#   .product-grid.col-xs-6.col-sm-3
   -#     .product-thumb{"data-sr" => ""}
   -#       %figure
