@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     passwords:     'users/passwords',
     registrations: 'users/registrations'
   }
+
   get 'shops/show'
   root to: "brands#index"
 

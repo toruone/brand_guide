@@ -34,7 +34,15 @@
 
 .container.showcase
   .row
-    %h1 Brand List
+    .col-sm-6
+      %h1 Brand List
+    .col-sm-6
+      = search_form_for @q do |f|
+        .input-search
+          = f.search_field :name_cont, class: "form-control"
+          -# %input#button-search.btn.btn-default{:type => "button", :value => "Search"}
+          = f.submit "Search", class: "btn btn-default"
+  .row
     -@brands.each do |brand|
       .product-grid.col-xs-6.col-sm-3
         .product-thumb{"data-sr" => ""}
