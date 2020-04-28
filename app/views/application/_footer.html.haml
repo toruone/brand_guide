@@ -88,7 +88,7 @@
               %a{:href => "skype:******?call"} Skype
       .col-sm-2
         .btn-group.dropup.powered
-          %button.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+          =link_to contact_path do
             %i.icon.ion-ios-email-outline
             %span Contact Us
           -# %ul.dropdown-menu.pull-right

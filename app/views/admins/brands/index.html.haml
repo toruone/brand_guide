@@ -1,0 +1,217 @@
+
+.container.showcase
+  .row
+    .col-sm-6
+      %h1 ＜Admin Page＞
+    .col-sm-6
+      = search_form_for @q do |f|
+        .input-search
+          = f.search_field :name_cont, class: "form-control"
+          -# %input#button-search.btn.btn-default{:type => "button", :value => "Search"}
+          = f.submit "Search", class: "btn btn-default"
+  .row
+    -@brands.each do |brand|
+      .product-grid.col-xs-6.col-sm-3
+        .product-thumb{"data-sr" => ""}
+          %figure
+            .image
+              =link_to brand_path(brand) do
+                =image_tag brand.image_logo_url(:logo), class: 'img-responsive'
+            %figcaption
+              .name
+                =link_to brand.name, admins_brand_path(brand)
+                -# %a{:href => "#"} Oversized Shirt
+              .price
+                =brand.country
+
+
+-# = search_form_for @q do |f|
+-#   = f.label :name, "Keyword"
+-#   = f.search_field :name_cont
+-#   = f.submit "検索", class: "actions"
+
+  -#   .product-grid.col-xs-6.col-sm-3
+  -#     .product-thumb{"data-sr" => ""}
+  -#       %figure
+  -#         .image
+  -#           %a{:href => "#"}
+  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+  -#         %figcaption
+  -#           .name
+  -#             %a{:href => "#"} Oversized Shirt
+  -#           .price
+  -#             $122.00
+  -#   .product-grid.col-xs-6.col-sm-3
+  -#     .product-thumb{"data-sr" => ""}
+  -#       %figure
+  -#         .image
+  -#           %a{:href => "#"}
+  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+  -#         %figcaption
+  -#           .name
+  -#             %a{:href => "#"} Oversized Shirt
+  -#           .price
+  -#             $122.00
+  -#   .product-grid.col-xs-6.col-sm-3
+  -#     .product-thumb{"data-sr" => ""}
+  -#       %figure
+  -#         .image
+  -#           %a{:href => "#"}
+  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+  -#         %figcaption
+  -#           .name
+  -#             %a{:href => "#"} Oversized Shirt
+  -#           .price
+  -#             $122.00
+  -# .row
+  -#   .col-xs-12.col-sm-3
+  -#     .row
+  -#       .product-grid.col-xs-6.col-sm-12
+  -#         .product-thumb{"data-sr" => ""}
+  -#           %figure
+  -#             .image
+  -#               %a{:href => "#"}
+  -#                 %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+  -#             %figcaption
+  -#               .name
+  -#                 %a{:href => "#"} Oversized Shirt
+  -#               .price
+  -#                 $122.00
+  -#     .row
+  -#       .product-grid.col-xs-6.col-sm-12
+  -#         .product-thumb{"data-sr" => ""}
+  -#           %figure
+  -#             .image
+  -#               %a{:href => "#"}
+  -#                 %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+  -#             %figcaption
+  -#               .name
+  -#                 %a{:href => "#"} Oversized Shirt
+  -#               .price
+  -#                 $122.00
+  -#   .product-grid.col-xs-12.col-sm-9
+  -#     .product-thumb{"data-sr" => ""}
+  -#       .image
+  -#         %a{:href => "#"}
+  -#           %img.img-responsive{:alt => "", :src => "assets/img/image_holder_848x559.png"}/
+  -# .row
+  -#   .product-grid.col-xs-6.col-sm-3
+  -#     .product-thumb{"data-sr" => ""}
+  -#       %figure
+  -#         .image
+  -#           %a{:href => "#"}
+  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+  -#         %figcaption
+  -#           .name
+  -#             %a{:href => "#"} Oversized Shirt
+  -#           .price
+  -#             $122.00
+  -#   .product-grid.col-xs-6.col-sm-3
+  -#     .product-thumb{"data-sr" => ""}
+  -#       %figure
+  -#         .image
+  -#           %a{:href => "#"}
+  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+  -#         %figcaption
+  -#           .name
+  -#             %a{:href => "#"} Oversized Shirt
+  -#           .price
+  -#             $122.00
+  -#   .product-grid.col-xs-6.col-sm-3
+  -#     .product-thumb{"data-sr" => ""}
+  -#       %figure
+  -#         .image
+  -#           %a{:href => "#"}
+  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+  -#         %figcaption
+  -#           .name
+  -#             %a{:href => "#"} Oversized Shirt
+  -#           .price
+  -#             $122.00
+  -#   .product-grid.col-xs-6.col-sm-3
+  -#     .product-thumb{"data-sr" => ""}
+  -#       %figure
+  -#         .image
+  -#           %a{:href => "#"}
+  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+  -#         %figcaption
+  -#           .name
+  -#             %a{:href => "#"} Oversized Shirt
+  -#           .price
+  -#             $122.00
+  -# .row
+  -#   .product-grid.col-xs-12.col-sm-9
+  -#     .product-thumb{"data-sr" => ""}
+  -#       .image
+  -#         %a{:href => "#"}
+  -#           %img.img-responsive{:alt => "", :src => "assets/img/image_holder_848x559.png"}/
+  -#   .col-xs-12.col-sm-3
+  -#     .row
+  -#       .product-grid.col-xs-6.col-sm-12
+  -#         .product-thumb{"data-sr" => ""}
+  -#           %figure
+  -#             .image
+  -#               %a{:href => "#"}
+  -#                 %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+  -#             %figcaption
+  -#               .name
+  -#                 %a{:href => "#"} Oversized Shirt
+  -#               .price
+  -#                 $122.00
+  -#     .row
+  -#       .product-grid.col-xs-6.col-sm-12
+  -#         .product-thumb{"data-sr" => ""}
+  -#           %figure
+  -#             .image
+  -#               %a{:href => "#"}
+  -#                 %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+  -#             %figcaption
+  -#               .name
+  -#                 %a{:href => "#"} Oversized Shirt
+  -#               .price
+  -#                 $122.00
+  -# .row
+  -#   .product-grid.col-xs-6.col-sm-3
+  -#     .product-thumb{"data-sr" => ""}
+  -#       %figure
+  -#         .image
+  -#           %a{:href => "#"}
+  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+  -#         %figcaption
+  -#           .name
+  -#             %a{:href => "#"} Oversized Shirt
+  -#           .price
+  -#             $122.00
+  -#   .product-grid.col-xs-6.col-sm-3
+  -#     .product-thumb{"data-sr" => ""}
+  -#       %figure
+  -#         .image
+  -#           %a{:href => "#"}
+  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+  -#         %figcaption
+  -#           .name
+  -#             %a{:href => "#"} Oversized Shirt
+  -#           .price
+  -#             $122.00
+  -#   .product-grid.col-xs-6.col-sm-3
+  -#     .product-thumb{"data-sr" => ""}
+  -#       %figure
+  -#         .image
+  -#           %a{:href => "#"}
+  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+  -#         %figcaption
+  -#           .name
+  -#             %a{:href => "#"} Oversized Shirt
+  -#           .price
+  -#             $122.00
+  -#   .product-grid.col-xs-6.col-sm-3
+  -#     .product-thumb{"data-sr" => ""}
+  -#       %figure
+  -#         .image
+  -#           %a{:href => "#"}
+  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
+  -#         %figcaption
+  -#           .name
+  -#             %a{:href => "#"} Oversized Shirt
+  -#           .price
+  -#             $122.00

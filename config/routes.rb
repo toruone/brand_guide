@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
+  get 'contact', to: "home#contact",as: 'contact'
+  get 'about', to: "home#about", as: 'about'
+
   devise_for :admins, controllers: {
-    sessions:      'admins/sessions',
-    passwords:     'admins/passwords',
+    sessions: 'admins/sessions',
+    passwords: 'admins/passwords',
     registrations: 'admins/registrations'
   }
+  namespace :admins do
+    resources :brands
+  end 
+
   devise_for :users, controllers: {
-    sessions:      'users/sessions',
-    passwords:     'users/passwords',
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
     registrations: 'users/registrations'
   }
 
