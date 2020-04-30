@@ -1,0 +1,9 @@
+=bootstrap_form_with model: @info_site, local: true do |f|
+  =f.text_field :name
+  -# =f.collection_select :director_id, Director.all, :id, :name, include_blank: true, class: 'form-control'
+  -# =f.collection_check_boxes :tag_ids, Tag.all,  :id, :name, class: 'form-control'
+  =f.text_field :url
+  =f.text_field :for
+  =f.text_area :description
+  =f.file_field :image
+  =f.submit class: "btn btn-info"

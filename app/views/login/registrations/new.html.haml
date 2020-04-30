@@ -1,0 +1,57 @@
+-# %h2 Sign up
+-# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+-#   = render "login/shared/error_messages", resource: resource
+-#   .field
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#   .field
+-#     = f.label :password
+-#     - if @minimum_password_length
+-#       %em
+-#         (#{@minimum_password_length} characters minimum)
+-#     %br/
+-#     = f.password_field :password, autocomplete: "new-password"
+-#   .field
+-#     = f.label :password_confirmation
+-#     %br/
+-#     = f.password_field :password_confirmation, autocomplete: "new-password"
+-#   .actions
+-#     = f.submit "Sign up"
+-# = render "login/shared/links"
+
+.container
+  %ul.breadcrumb
+    %li
+      =link_to root_path do
+        %i.icon.ion-ios-home-outline
+    %li
+      =link_to 'Sign Up', new_user_registration_path
+  .row
+    .col-sm-12
+      %h1 Register Account
+      %p
+        If you already have account with us, please login at the
+        = succeed "." do
+          =link_to 'Login Page', new_user_session_path
+      .form-horizontal
+        %fieldset#account
+          -# %legend Your personal details
+          = bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = render "login/shared/error_messages", resource: resource
+            =f.form_group :email do
+              =f.label :email, 'E-mail', class: 'col-sm-2 control-label required'
+              .col-sm-10
+                =f.email_field_without_bootstrap :email, placeholder: 'E-mail', class: 'form-control col-sm-5'
+            =f.form_group :password do
+              =f.label :password, 'Password', class: 'col-sm-2 control-label required'
+              .col-sm-10
+                =f.password_field_without_bootstrap :password, placeholder: 'Password(6 characters minimum))', class: 'form-control col-sm-5'
+            =f.form_group :password_confirmation do
+              =f.label :password_confirmation, 'Password Confirm', class: 'col-sm-2 control-label required'
+              .col-sm-10
+                =f.password_field_without_bootstrap :password_confirmation, placeholder: 'Password(6 characters minimum))', class: 'form-control col-sm-5'
+            .buttons
+              .pull-right
+                = f.submit "Sign up", class: 'btn btn-primary'
+            = render "login/shared/links"

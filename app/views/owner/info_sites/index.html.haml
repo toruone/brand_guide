@@ -1,0 +1,64 @@
+-# -@info_sites.each do|info_site|
+-#   ="Name："
+-#   =link_to info_site.name, info_site_path(info_site)
+-#   %br
+-#   ="URL："
+-#   =info_site.url
+-#   %hr
+-#
+-# =link_to "New Site", new_info_site_path
+
+.container
+  %ul.breadcrumb
+    %li
+      %a{:href => "/"}
+        %i.icon.ion-ios-home-outline
+    %li
+      Info Sites
+  .row
+    #content.col-sm-12
+      %h2 Information Sites
+      .buttons.clearfix
+        .pull-right
+          =link_to "login", new_user_session_path, class: "btn btn-primary"
+      %br
+      %br
+      %table.table
+        %thead
+          %tr
+            %td.text-center
+            %td.text-left Name
+            %td.text-left URL
+            %td.text-right For
+            %td.text-left Description
+            %td.text-left
+        -@info_sites.each do |info_site |
+          %tbody
+            %tr
+              %td.text-center
+                =image_tag info_site.image_url(:small)
+                -# =link_to info_site.url, target: "_blank" do
+                -#   =image_tag info_site.image_url(:small)
+                %td.text-left=link_to info_site.name, info_site.url, target: "_blank"
+                %td.text-left=link_to info_site.url, info_site.url, target: "_blank"
+                %td.text-right=info_site.for
+                %td.text-left=info_site.description
+                %td.text-right
+                  -# %button.btn.btn-danger{"data-toggle" => "tooltip", :title => "Add to Cart", :type => "button"}
+                  -#   %i.icon.ion-ios-cart-outline
+                  -# %a.btn.btn-danger{"data-toggle" => "tooltip", :href => "#", :title => "Remove"}
+                  -#   %i.icon.ion-ios-close-empty
+                  -if user_signed_in?
+                    -if info_site.favorited_by?(current_user)
+                      .buttons.clearfix
+                        .pull-right
+                          =link_to "Delete from MyPage", info_site_info_users_path(info_site), method: :delete, data: {confirm: "Delete OK？"}, class: "btn btn-default"
+                    -else
+                      .buttons.clearfix
+                        .pull-right
+                          =link_to "Register to MyPage", info_site_info_users_path(info_site), method: :post, class: "btn btn-primary"
+                      -# %a.btn.btn-primary{:href => "#"} Register to MyPage
+                  -# -else
+                  -#   .buttons.clearfix
+                  -#     .pull-right
+                  -#       =link_to "login", new_user_session_path, class: "btn btn-primary"

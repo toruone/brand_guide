@@ -3,22 +3,16 @@ Rails.application.routes.draw do
   get 'about', to: "home#about", as: 'about'
 
   devise_for :admins, controllers: {
-    sessions: 'admins/sessions',
-    passwords: 'admins/passwords',
-    registrations: 'admins/registrations'
+    sessions: 'owner/sessions',
+    passwords: 'owner/passwords',
+    registrations: 'owner/registrations'
   }
-  namespace :admins do
-    resources :brands
-  end 
 
   devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    passwords: 'users/passwords',
-    registrations: 'users/registrations'
+    sessions: 'login/sessions',
+    passwords: 'login/passwords',
+    registrations: 'login/registrations'
   }
-
-  get 'shops/show'
-  root to: "brands#index"
 
   resources :brands do
     resource :brand_users, only: [:create, :destroy]
@@ -35,5 +29,11 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :owner do
+    root to: "brands#index"
+    resources :brands
+    resources :info_sites
+  end
+  root to: "brands#index"
 end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
