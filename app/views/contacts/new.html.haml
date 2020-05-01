@@ -1,3 +1,14 @@
+-# -# %br
+-# -# %br
+-# -#
+-# =bootstrap_form_with model: @contact, local: true do |f|
+-#   =f.text_field :user_name
+-#   -# =f.collection_select :director_id, Director.all, :id, :name, include_blank: true, class: 'form-control'
+-#   -# =f.collection_check_boxes :tag_ids, Tag.all,  :id, :name, class: 'form-control'
+-#   =f.text_field :email
+-#   =f.text_area :inquiry
+-#   =f.submit class: "btn btn-info"
+
 .container
   %ul.breadcrumb
     %li
@@ -13,20 +24,65 @@
         .panel-heading
           %h3.panel-title Contact Form
         .panel-body
-          %form.form-horizontal
-            %fieldset
-              .form-group.required
-                %label.col-sm-2.control-label{:for => "input-name"} Your Name
-                .col-sm-10
-                  %input#input-name.form-control{:name => "name", :type => "text", :value => ""}/
-              .form-group.required
-                %label.col-sm-2.control-label{:for => "input-email"} Email 
-                .col-sm-10
-                  %input#input-email.form-control{:name => "email", :type => "text", :value => ""}/
-              .form-group.required
-                %label.col-sm-2.control-label{:for => "input-inquiry"} Inquiry
-                .col-sm-10
-                  %textarea#input-enquiry.form-control{:name => "inquiry", :rows => "10"}
-            .buttons
-              .pull-right
-                %input.btn.btn-primary{:type => "submit", :value => "Submit"}/
+          =bootstrap_form_with model: @contact, local: true do |f|
+            =f.text_field :user_name
+            -# =f.collection_select :director_id, Director.all, :id, :name, include_blank: true, class: 'form-control'
+            -# =f.collection_check_boxes :tag_ids, Tag.all,  :id, :name, class: 'form-control'
+            =f.text_field :email
+            =f.text_area :inquiry
+            =f.submit "submit", class: 'btn btn-primary'
+            -# =f.submit class: "btn btn-info"
+
+-#
+-#
+-#           =bootstrap_form_with model: @contact, layout: :horizontal, local: true do |f|　
+-#             %fieldset
+-#               =f.form_group :user_name, class: 'required' do
+-#                 =f.label :user_name, "Your Name", class: 'col-sm-2 control-label'
+-#                 .col-sm-10
+-#                   =f.text_field_without_bootstrap :user_name, class: 'form-control'
+-#               =f.form_group :email, class: 'required' do
+-#                 =f.label :email, "Email", class: 'col-sm-2 control-label'
+-#                 .col-sm-10
+-#                   =f.email_field_without_bootstrap :email, class: 'form-control'
+-#               =f.form_group :inquiry, class: 'required' do
+-#                 =f.label :inquiry, "Inquiry", class: 'col-sm-2 control-label'
+-#                 .col-sm-10
+-#                   =f.text_area_without_bootstrap :inquiry, class: 'form-control'
+-#             .buttons
+-#               .pull-right
+-#                 = f.submit "submit", class: 'btn btn-primary'
+-#                 -# %input.btn.btn-primary{:type => "submit", :value => "Submit"}/
+-#
+-# .container
+-#   %ul.breadcrumb
+-#     %li
+-#       %a{:href => "/"}
+-#         %i.icon.ion-ios-home-outline
+-#     %li
+-#       Contact Us
+-#   .row
+-#     #content.col-sm-12
+-#       %h1 Contact Us
+-#       %br/
+-#       .panel.panel-default
+-#         .panel-heading
+-#           %h3.panel-title Contact Form
+-#         .panel-body
+-#           %form.form-horizontal
+-#             %fieldset
+-#               .form-group.required
+-#                 %label.col-sm-2.control-label{:for => "input-name"} Your Name
+-#                 .col-sm-10
+-#                   %input#input-name.form-control{:name => "name", :type => "text", :value => ""}/
+-#               .form-group.required
+-#                 %label.col-sm-2.control-label{:for => "input-email"} Email Address
+-#                 .col-sm-10
+-#                   %input#input-email.form-control{:name => "email", :type => "text", :value => ""}/
+-#               .form-group.required
+-#                 %label.col-sm-2.control-label{:for => "input-enquiry"} Enquiry
+-#                 .col-sm-10
+-#                   %textarea#input-enquiry.form-control{:name => "enquiry", :rows => "10"}
+-#             .buttons
+-#               .pull-right
+-#                 %input.btn.btn-primary{:type => "submit", :value => "Submit"}/
