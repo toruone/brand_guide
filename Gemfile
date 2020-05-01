@@ -29,6 +29,7 @@ gem 'mini_magick'
 gem 'kaminari'
 gem 'ransack'
 gem 'devise'
+gem 'pry'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

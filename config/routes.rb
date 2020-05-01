@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     resource :info_users, only: [:create, :destroy]
   end
 
+  resources :contacts, only: [:new, :create]
+
   resources :shops
   namespace :login do
     resource :mypage, only: [:show] do

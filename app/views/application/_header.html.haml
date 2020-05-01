@@ -2,27 +2,42 @@
   %h2
     %a{:href => "/"} World Brands+
   %ul.list-unstyled
-    %li
-      =link_to "Brands", brands_path
-      -# %a{:href => "/brands"} Brand
-    %li
-      =link_to "Info Sites", info_sites_path
-      -# %a{:href => "/info_sites"} Info Site
-    %li
+    -if admin_signed_in?
+      %li
+        = link_to 'Brands(admin)', owner_brands_path
+      %li
+        = link_to 'Info Sites(admin)', owner_info_sites_path
+      %li
+        = link_to 'Log Out(admin)', destroy_admin_session_path
+
     -if user_signed_in?
+      %li
+        =link_to "Brands", brands_path
+      %li
+        =link_to "Info Sites", info_sites_path
       %li
         = link_to 'My Page', login_mypage_path
       %li
         = link_to 'My Profile', edit_login_mypage_profile_path
       %li
         = link_to 'Log Out', destroy_user_session_path
+      %li
+        = link_to 'About Us', about_path
+      %li
+        = link_to 'Contact Us', new_contact_path
     -else
+      %li
+        =link_to "Brands", brands_path
+      %li
+        =link_to "Info Sites", info_sites_path
       %li
         = link_to 'Login', new_user_session_path
       %li
         = link_to 'Sign Up', new_user_registration_path
-    %li
-      %a{:href => "contact"} Contact Us
+      %li
+        = link_to 'About Us', about_path
+      %li
+        = link_to 'Contact Us', new_contact_path
     -# %li
     -#   %a{:href => "#"} Sunglasses & Eyewear
     -# %li
@@ -44,6 +59,9 @@
                   %i.icon.ion-ios-person-outline{"data-placement" => "bottom", "data-toggle" => "tooltip", :title => "My Account"}
                 %ul.dropdown-menu.dropdown-menu-right.text-center
                   %li.dropdown-triangle
+                  -if admin_signed_in?
+                    %li
+                      = link_to 'Log Out(admin)', destroy_admin_session_path
                   -if user_signed_in?
                     %li
                       = link_to 'My Page', login_mypage_path
