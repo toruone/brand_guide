@@ -1,0 +1,12 @@
+=bootstrap_form_with model: @shop, local: true do |f|
+  =f.text_field :name
+  -# =f.collection_select :director_id, Director.all, :id, :name, include_blank: true, class: 'form-control'
+  -# =f.collection_check_boxes :tag_ids, Tag.all,  :id, :name, class: 'form-control'
+  =f.collection_select :brand_id, Brand.all, :id, :name, include_blank: true, class: 'form-control'
+  =f.text_field :address
+  =f.text_field :shop_url
+  =f.file_field :image
+  =f.file_field :image1
+  =f.file_field :image2
+  =f.file_field :image3
+  =f.submit class: "btn btn-info"

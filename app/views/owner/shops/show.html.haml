@@ -1,0 +1,82 @@
+-# =@shop.name
+-# =@shop.address
+-# =image_tag @shop.image_url, class: 'img-fluid'
+-# -# =image_tag @shop.image1_url, class: 'img-fluid'
+-#
+-#
+-# =link_to "一覧に戻る", shops_path
+-# =link_to "編集する", edit_shop_path(@shop)
+-# =link_to "削除する", shop_path(@shop), method: :delete, data: {confirm: "削除しますか？"}
+
+.container
+  .row.product-page
+    #content.col-sm-12
+      .row
+        .col-sm-7
+          %ul.thumbnails
+            %li
+              .thumbnail
+                =link_to @shop.image_url(:large), class: 'thumbnail' do
+                  =image_tag @shop.image_url(:logo), class: 'img-responsive'
+            -(1..3).each do |i|
+              %li
+                =link_to @shop.try("image#{i}_url", :large), class: 'thumbnail' do
+                  =image_tag @shop.try("image#{i}_url", :thumb), class: 'img-responsive'
+              -# %a.thumbnail{:href => "/img/image_holder_x800.png", :title => ""}
+              -#   %img.img-responsive{:alt => "", :src => "/img/image_holder_x800.png", :title => ""}/
+            -# %li
+            -#   %a.thumbnail{:href => "/img/image_holder_x800.png", :title => ""}
+            -#     %img.img-responsive{:alt => "", :src => "/img/image_holder_x800.png", :title => ""}/
+            -# %li
+            -#   %a.thumbnail{:href => "/img/image_holder_x800.png", :title => ""}
+            -#     %img.img-responsive{:alt => "", :src => "/img/image_holder_x800.png", :title => ""}/
+            -# %li
+            -#   %a.thumbnail{:href => "/img/image_holder_x800.png", :title => ""}
+            -#     %img.img-responsive{:alt => "", :src => "/img/image_holder_x800.png", :title => ""}/
+        .col-sm-5
+          %ul.breadcrumb
+            %li
+              %a{:href => "/"}
+                %i.icon.ion-ios-home-outline
+            %li
+              =link_to "Brands", brands_path
+            %li
+              =@shop.name
+          %h1=@shop.name
+          .table-responsive
+            %table.table
+              %tr
+                %td Address:
+                %td=@shop.address
+
+              %tr
+                %td Store URL:
+                %td=link_to @shop.shop_url, @shop.shop_url, target: "_blank"
+              -# %tr
+              -#   %td HP URL:
+              -#   %td
+              -#     =link_to @brand.hp_url, @brand.hp_url, target: "_blank"
+                -# %%td
+                -#   %a#reviews{:href => ""} 2 reviews
+
+          -# %ul.list-unstyled
+          -#   %li
+          -#     %h2.price $123.20
+          -#   %li Ex Tax: $720.00
+          -#   %li Price in reward points: 400
+          -# %hr/
+          -# %h3 Available Options
+          -# .form-group
+          -#   %label.control-label{:for => "input-option-date"} Delivery Date
+          -#   .input-group.date
+          -#     %input#input-option-date.form-control{"data-date-format" => "YYYY-MM-DD", :name => "date", :placeholder => "2015-09-22", :type => "text", :value => ""}/
+          -#     %span.input-group-btn
+          -#       %button.btn.btn-default{:type => "button"}
+          -#         %i.icon.ion-ios-calendar-outline
+          .form-group
+            -# %label.control-label{:for => "input-quantity"} Qty
+            -# %input#input-quantity.form-control{:name => "quantity", :size => "2", :type => "text", :value => "1"}/
+            %br/
+            %button#button-cart.btn.btn-lg.btn-primary.btn-block{"data-loading-text" => "Loading...", :type => "button"} Register on MyPage
+          -# %button#button-wishlist.btn.btn-default.btn-block{:type => "button"} Add to Wishlist
+          -# %button#button-compare.btn.btn-default.btn-block{:type => "button"} Compare this Product
