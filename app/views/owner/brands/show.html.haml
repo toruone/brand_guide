@@ -91,7 +91,7 @@
           .product-thumb
             %figure
               .image
-                =link_to shop_path(shop) do
+                =link_to  owner_shop_path(shop) do
                   =image_tag shop.image_url(:thumb), class: 'img-responsive'
               %figcaption
                 .name=shop.name

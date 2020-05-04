@@ -3,6 +3,8 @@
   .row
     .col-sm-6
       %h1 ＜Admin Page＞
+      .buttons.clearfix
+        =link_to "new site", new_owner_brand_path, class: "btn btn-info"  
     .col-sm-6
       = search_form_for @q do |f|
         .input-search
@@ -15,7 +17,7 @@
         .product-thumb{"data-sr" => ""}
           %figure
             .image
-              =link_to brand_path(brand) do
+              =link_to owner_brand_path(brand) do
                 =image_tag brand.image_logo_url(:logo), class: 'img-responsive'
             %figcaption
               .name

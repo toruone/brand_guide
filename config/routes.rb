@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     root to: "brands#index"
     resources :brands
     resources :info_sites
+    resources :shops
   end
   root to: "brands#index"
 end

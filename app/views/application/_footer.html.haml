@@ -68,24 +68,24 @@
           -#   %li
           -#     %a{:href => "#"} Newsletter
       .col-sm-2
-        .btn-group.dropup.social
-          %button.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+        .btn-group.dropup.powered
+          =link_to about_path do
             %i.icon.ion-ios-people-outline
             %span About Us
-          %ul.dropdown-menu.pull-right
-            %li.dropdown-triangle
-            %li
-              %a{:href => "https://www.facebook.com/"} Facebook
-            %li
-              %a{:href => "https://twitter.com/"} Twitter
-            %li
-              %a{:href => "https://www.pinterest.com/"} Pinterest
-            %li
-              %a{:href => "https://plus.google.com/"} Google Plus
-            %li
-              %a{:href => "https://github.com/"} Github
-            %li
-              %a{:href => "skype:******?call"} Skype
+          -# %ul.dropdown-menu.pull-right
+          -#   %li.dropdown-triangle
+          -#   %li
+          -#     %a{:href => "https://www.facebook.com/"} Facebook
+          -#   %li
+          -#     %a{:href => "https://twitter.com/"} Twitter
+          -#   %li
+          -#     %a{:href => "https://www.pinterest.com/"} Pinterest
+          -#   %li
+          -#     %a{:href => "https://plus.google.com/"} Google Plus
+          -#   %li
+          -#     %a{:href => "https://github.com/"} Github
+          -#   %li
+          -#     %a{:href => "skype:******?call"} Skype
       .col-sm-2
         .btn-group.dropup.powered
           =link_to new_contact_path do
