@@ -26,12 +26,12 @@
       =link_to root_path do
         %i.icon.ion-ios-home-outline
     %li
-      =link_to 'Sign Up', new_user_registration_path
+      Sign Up
   .row
     .col-sm-12
       %h1 Register Account
       %p
-        If you already have account with us, please login at the
+        ※If you already have account ⇨
         = succeed "." do
           =link_to 'Login Page', new_user_session_path
       .form-horizontal
@@ -54,14 +54,9 @@
             .buttons
               .pull-right
                 = f.submit "Sign up", class: 'btn btn-primary'
-            = render "login/shared/links"
+              -# = render "shared/links"
 
-
-
-
-
-
-
-
-
-            
+%br
+%br
+%br
+%br
