@@ -14,17 +14,18 @@ Rails.application.routes.draw do
     registrations: 'login/registrations'
   }
 
-  resources :brands do
+  resources :brands, only: [:index, :show] do
     resource :brand_users, only: [:create, :destroy]
   end
 
-  resources :info_sites do
+  resources :info_sites, only: [:index] do
     resource :info_users, only: [:create, :destroy]
   end
 
   resources :contacts, only: [:new, :create]
 
-  resources :shops
+  resources :shops, only: [:show]
+
   namespace :login do
     resource :mypage, only: [:show] do
       resource :profile, only: [:create, :edit, :update]
