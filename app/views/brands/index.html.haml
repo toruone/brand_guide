@@ -38,10 +38,11 @@
       %h1 Brand List
     .col-sm-6
       = search_form_for @q do |f|
-        .input-search
+        .input-group
           = f.search_field :name_cont, class: "form-control"
           -# %input#button-search.btn.btn-default{:type => "button", :value => "Search"}
-          = f.submit "Search", class: "btn btn-default"
+          %span.input-group-btn
+            = f.submit "Search", class: "btn btn-default"
   .row
     -@brands.each do |brand|
       .product-grid.col-xs-6.col-sm-3
