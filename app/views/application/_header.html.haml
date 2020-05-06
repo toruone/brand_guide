@@ -1,6 +1,8 @@
 %nav.side-nav.side-nav-left
   %h2
-    %a{:href => "/"} World Brands+
+    -# %a{:href => "/"} World Brands+
+    =link_to brands_path do
+      %img{:alt => "", :src => "/img/SiteLogo6.png"}/
   %ul.list-unstyled
     -if user_signed_in?
       %li
@@ -48,7 +50,8 @@
       .row
         .col-sm-12
           .menu.pull-left{"data-placement" => "bottom", "data-toggle" => "tooltip", :title => "Menu"}
-            %i.icon.ion-ios-more
+            -# %i.icon.ion-ios-more
+            %img{:alt => "", :src => "/img/SiteLogo5.png"}/
           .account.pull-right
             %ul.list-inline
               %li.dropdown

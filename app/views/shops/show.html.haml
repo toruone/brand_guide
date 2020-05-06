@@ -41,6 +41,8 @@
             %li
               =link_to "Brands", brands_path
             %li
+              =link_to @shop.brand.name, brand_path(@shop.brand)
+            %li
               =@shop.name
           %h1=@shop.name
           .table-responsive
