@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'contact', to: "home#contact",as: 'contact'
   get 'about', to: "home#about", as: 'about'
+  # get 'top', to: "home#top"
 
   devise_for :admins, controllers: {
     sessions: 'owner/sessions',

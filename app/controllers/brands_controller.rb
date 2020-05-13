@@ -5,7 +5,7 @@ class BrandsController < ApplicationController
 
   def index
     @q = Brand.ransack(params[:q])
-    @brands = @q.result(distinct: true)
+    @brands = @q.result(distinct: true).page(params[:page]).per(12)
   end
 
   # def create

@@ -31,11 +31,55 @@
         .item
           %img{:alt => "", :src => "img/top_pic7.jpg"}/
 
+.container
+  %ul.breadcrumb
+  .row
+    #content.col-sm-12
+      %h1 Welcome!!
+      .panel.panel-default
+        .panel-body
+          .row
+            .col-sm-3
+              %img.img-thumbnail{:alt => "", :src => "/img/about_pic7.jpg", :title => ""}/
+            .col-sm-3
+              %img.img-thumbnail{:alt => "", :src => "/img/about_pic6.jpg", :title => ""}/
+            .col-sm-3
+              %img.img-thumbnail{:alt => "", :src => "/img/about_pic5.jpg", :title => ""}/
+            .col-sm-3
+              %img.img-thumbnail{:alt => "", :src => "/img/about_pic4.jpg", :title => ""}/
+          -#   .col-sm-3
+          -#     %strong World Brands+
+          -#     %br/
+          -#     %address
+          -#       Toronto, Ontario
+          -#       %br/
+          -#       Canada
+          -#   .col-sm-3
+          -#     %strong Contact
+          -#     =link_to "worldbrands777@gmail.com", new_contact_path
+          -#   .col-sm-3
+          -#     %strong Business hours
+          -#     %br/
+          -#     Monday - Fridey
+          -#     %br/
+          -#     9am - 6pm
+          .row
+            .col-sm-12
+              %br
+              %strong【About this site】
+              %br/
+              %p Welcome to World Brands+, this site is the platform for searching fashion brands around the world.
+              %p You can also group your favorite brands on My Page and check the websites and shops of those brands at any time.
+          .buttons.clearfix
+            .pull-right
+              -if user_signed_in?
+              -else
+                =link_to "Create MyPage", new_user_registration_path, class: "btn btn-primary"
 
 .container.showcase
   .row
     .col-sm-6
-      %h1 ■Brand List
+      %h1 ■Brands
     .col-sm-6
       = search_form_for @q do |f|
         .input-group
@@ -57,195 +101,9 @@
                 -# %a{:href => "#"} Oversized Shirt
               .price
                 =brand.country
-
-
--# = search_form_for @q do |f|
--#   = f.label :name, "Keyword"
--#   = f.search_field :name_cont
--#   = f.submit "検索", class: "actions"
-
-  -#   .product-grid.col-xs-6.col-sm-3
-  -#     .product-thumb{"data-sr" => ""}
-  -#       %figure
-  -#         .image
-  -#           %a{:href => "#"}
-  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
-  -#         %figcaption
-  -#           .name
-  -#             %a{:href => "#"} Oversized Shirt
-  -#           .price
-  -#             $122.00
-  -#   .product-grid.col-xs-6.col-sm-3
-  -#     .product-thumb{"data-sr" => ""}
-  -#       %figure
-  -#         .image
-  -#           %a{:href => "#"}
-  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
-  -#         %figcaption
-  -#           .name
-  -#             %a{:href => "#"} Oversized Shirt
-  -#           .price
-  -#             $122.00
-  -#   .product-grid.col-xs-6.col-sm-3
-  -#     .product-thumb{"data-sr" => ""}
-  -#       %figure
-  -#         .image
-  -#           %a{:href => "#"}
-  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
-  -#         %figcaption
-  -#           .name
-  -#             %a{:href => "#"} Oversized Shirt
-  -#           .price
-  -#             $122.00
-  -# .row
-  -#   .col-xs-12.col-sm-3
-  -#     .row
-  -#       .product-grid.col-xs-6.col-sm-12
-  -#         .product-thumb{"data-sr" => ""}
-  -#           %figure
-  -#             .image
-  -#               %a{:href => "#"}
-  -#                 %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
-  -#             %figcaption
-  -#               .name
-  -#                 %a{:href => "#"} Oversized Shirt
-  -#               .price
-  -#                 $122.00
-  -#     .row
-  -#       .product-grid.col-xs-6.col-sm-12
-  -#         .product-thumb{"data-sr" => ""}
-  -#           %figure
-  -#             .image
-  -#               %a{:href => "#"}
-  -#                 %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
-  -#             %figcaption
-  -#               .name
-  -#                 %a{:href => "#"} Oversized Shirt
-  -#               .price
-  -#                 $122.00
-  -#   .product-grid.col-xs-12.col-sm-9
-  -#     .product-thumb{"data-sr" => ""}
-  -#       .image
-  -#         %a{:href => "#"}
-  -#           %img.img-responsive{:alt => "", :src => "assets/img/image_holder_848x559.png"}/
-  -# .row
-  -#   .product-grid.col-xs-6.col-sm-3
-  -#     .product-thumb{"data-sr" => ""}
-  -#       %figure
-  -#         .image
-  -#           %a{:href => "#"}
-  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
-  -#         %figcaption
-  -#           .name
-  -#             %a{:href => "#"} Oversized Shirt
-  -#           .price
-  -#             $122.00
-  -#   .product-grid.col-xs-6.col-sm-3
-  -#     .product-thumb{"data-sr" => ""}
-  -#       %figure
-  -#         .image
-  -#           %a{:href => "#"}
-  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
-  -#         %figcaption
-  -#           .name
-  -#             %a{:href => "#"} Oversized Shirt
-  -#           .price
-  -#             $122.00
-  -#   .product-grid.col-xs-6.col-sm-3
-  -#     .product-thumb{"data-sr" => ""}
-  -#       %figure
-  -#         .image
-  -#           %a{:href => "#"}
-  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
-  -#         %figcaption
-  -#           .name
-  -#             %a{:href => "#"} Oversized Shirt
-  -#           .price
-  -#             $122.00
-  -#   .product-grid.col-xs-6.col-sm-3
-  -#     .product-thumb{"data-sr" => ""}
-  -#       %figure
-  -#         .image
-  -#           %a{:href => "#"}
-  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
-  -#         %figcaption
-  -#           .name
-  -#             %a{:href => "#"} Oversized Shirt
-  -#           .price
-  -#             $122.00
-  -# .row
-  -#   .product-grid.col-xs-12.col-sm-9
-  -#     .product-thumb{"data-sr" => ""}
-  -#       .image
-  -#         %a{:href => "#"}
-  -#           %img.img-responsive{:alt => "", :src => "assets/img/image_holder_848x559.png"}/
-  -#   .col-xs-12.col-sm-3
-  -#     .row
-  -#       .product-grid.col-xs-6.col-sm-12
-  -#         .product-thumb{"data-sr" => ""}
-  -#           %figure
-  -#             .image
-  -#               %a{:href => "#"}
-  -#                 %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
-  -#             %figcaption
-  -#               .name
-  -#                 %a{:href => "#"} Oversized Shirt
-  -#               .price
-  -#                 $122.00
-  -#     .row
-  -#       .product-grid.col-xs-6.col-sm-12
-  -#         .product-thumb{"data-sr" => ""}
-  -#           %figure
-  -#             .image
-  -#               %a{:href => "#"}
-  -#                 %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
-  -#             %figcaption
-  -#               .name
-  -#                 %a{:href => "#"} Oversized Shirt
-  -#               .price
-  -#                 $122.00
-  -# .row
-  -#   .product-grid.col-xs-6.col-sm-3
-  -#     .product-thumb{"data-sr" => ""}
-  -#       %figure
-  -#         .image
-  -#           %a{:href => "#"}
-  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
-  -#         %figcaption
-  -#           .name
-  -#             %a{:href => "#"} Oversized Shirt
-  -#           .price
-  -#             $122.00
-  -#   .product-grid.col-xs-6.col-sm-3
-  -#     .product-thumb{"data-sr" => ""}
-  -#       %figure
-  -#         .image
-  -#           %a{:href => "#"}
-  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
-  -#         %figcaption
-  -#           .name
-  -#             %a{:href => "#"} Oversized Shirt
-  -#           .price
-  -#             $122.00
-  -#   .product-grid.col-xs-6.col-sm-3
-  -#     .product-thumb{"data-sr" => ""}
-  -#       %figure
-  -#         .image
-  -#           %a{:href => "#"}
-  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
-  -#         %figcaption
-  -#           .name
-  -#             %a{:href => "#"} Oversized Shirt
-  -#           .price
-  -#             $122.00
-  -#   .product-grid.col-xs-6.col-sm-3
-  -#     .product-thumb{"data-sr" => ""}
-  -#       %figure
-  -#         .image
-  -#           %a{:href => "#"}
-  -#             %img.img-responsive{:alt => "", :src => "assets/img/image_holder_x263.png", :title => ""}/
-  -#         %figcaption
-  -#           .name
-  -#             %a{:href => "#"} Oversized Shirt
-  -#           .price
-  -#             $122.00
+  =paginate @brands
+%br
+%br
+%br
+%br
+			
