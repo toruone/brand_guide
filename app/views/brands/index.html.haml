@@ -1,85 +1,57 @@
--# -@brands.each do|brand|
--#   ="Name："
--#   =link_to brand.name, brand_path(brand)
--#   %br
--#   ="Country："
--#   =brand.country
--#   %br
--#   ="Since："
--#   =brand.since
--#   %br
--#   ="Description："
--#   =brand.description
--#   %br
--#   ="HP URL："
--#   =brand.hp_url
--#   %hr
+-# .container-fluid.nopadding
+-#   .row
+-#     .col-sm-12
+-#       #slideshow.owl-carousel{:style => "opacity: 1;"}
+-#         .item
+-#           %img{:alt => "", :src => "img/top_pic1.jpg"}/
+-#         .item
+-#           %img{:alt => "", :src => "img/top_pic4.jpg"}/
+-#         .item
+-#           %img{:alt => "", :src => "img/top_pic2.jpg"}/
+-#         .item
+-#           %img{:alt => "", :src => "img/top_pic7.jpg"}/
 -#
--# =link_to "New Brand", new_brand_path
-
-/ Slideshow
-.container-fluid.nopadding
-  .row
-    .col-sm-12
-      #slideshow.owl-carousel{:style => "opacity: 1;"}
-        .item
-          %img{:alt => "", :src => "img/top_pic1.jpg"}/
-        .item
-          %img{:alt => "", :src => "img/top_pic4.jpg"}/
-        .item
-          %img{:alt => "", :src => "img/top_pic2.jpg"}/
-        .item
-          %img{:alt => "", :src => "img/top_pic7.jpg"}/
-
+-# .container
+-#   %ul.breadcrumb
+-#   .row
+-#     #content.col-sm-12
+-#       %h1 Welcome!!
+-#       .panel.panel-default
+-#         .panel-body
+-#           .row
+-#             .col-sm-3
+-#               %img.img-thumbnail{:alt => "", :src => "/img/about_pic7.jpg", :title => ""}/
+-#             .col-sm-3
+-#               %img.img-thumbnail{:alt => "", :src => "/img/about_pic6.jpg", :title => ""}/
+-#             .col-sm-3
+-#               %img.img-thumbnail{:alt => "", :src => "/img/about_pic5.jpg", :title => ""}/
+-#             .col-sm-3
+-#               %img.img-thumbnail{:alt => "", :src => "/img/about_pic4.jpg", :title => ""}/
+-#
+-#           .row
+-#             .col-sm-12
+-#               %br
+-#               %strong【About this site】
+-#               %br/
+-#               %p Welcome to World Brands+, this site is the platform for searching fashion brands around the world.
+-#               %p You can also group your favorite brands on My Page and check the websites and shops of those brands at any time.
+-#           .buttons.clearfix
+-#             .pull-right
+-#               -if user_signed_in?
+-#               -else
+-#                 =link_to "Create MyPage", new_user_registration_path, class: "btn btn-primary"
 .container
   %ul.breadcrumb
-  .row
-    #content.col-sm-12
-      %h1 Welcome!!
-      .panel.panel-default
-        .panel-body
-          .row
-            .col-sm-3
-              %img.img-thumbnail{:alt => "", :src => "/img/about_pic7.jpg", :title => ""}/
-            .col-sm-3
-              %img.img-thumbnail{:alt => "", :src => "/img/about_pic6.jpg", :title => ""}/
-            .col-sm-3
-              %img.img-thumbnail{:alt => "", :src => "/img/about_pic5.jpg", :title => ""}/
-            .col-sm-3
-              %img.img-thumbnail{:alt => "", :src => "/img/about_pic4.jpg", :title => ""}/
-          -#   .col-sm-3
-          -#     %strong World Brands+
-          -#     %br/
-          -#     %address
-          -#       Toronto, Ontario
-          -#       %br/
-          -#       Canada
-          -#   .col-sm-3
-          -#     %strong Contact
-          -#     =link_to "worldbrands777@gmail.com", new_contact_path
-          -#   .col-sm-3
-          -#     %strong Business hours
-          -#     %br/
-          -#     Monday - Fridey
-          -#     %br/
-          -#     9am - 6pm
-          .row
-            .col-sm-12
-              %br
-              %strong【About this site】
-              %br/
-              %p Welcome to World Brands+, this site is the platform for searching fashion brands around the world.
-              %p You can also group your favorite brands on My Page and check the websites and shops of those brands at any time.
-          .buttons.clearfix
-            .pull-right
-              -if user_signed_in?
-              -else
-                =link_to "Create MyPage", new_user_registration_path, class: "btn btn-primary"
+    %li
+      %a{:href => "/"}
+        %i.icon.ion-ios-home-outline
+    %li
+      Brands
 
 .container.showcase
   .row
     .col-sm-6
-      %h1 ■Brands
+      %h1 ■Brands List■
     .col-sm-6
       = search_form_for @q do |f|
         .input-group
@@ -106,4 +78,3 @@
 %br
 %br
 %br
-			

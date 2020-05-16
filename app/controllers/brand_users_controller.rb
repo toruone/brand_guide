@@ -6,7 +6,7 @@ class BrandUsersController < ApplicationController
   end
 
   def destroy
-    brand_user = BrandUser.find_by(brand_id: params[:brand_id], user_id: current_user.id)
+    brand_user = BrandUser.find_by!(brand_id: params[:brand_id], user_id: current_user.id)
     brand_user.destroy
     redirect_to brand_path(params[:brand_id]), notice: "おDelete done"
   end

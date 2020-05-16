@@ -1,4 +1,9 @@
 class HomeController < ApplicationController
-  def contact
+  def about
+  end
+
+  def top
+    @q = Brand.ransack(params[:q])
+    @brands = @q.result(distinct: true).page(params[:page]).per(12)
   end
 end

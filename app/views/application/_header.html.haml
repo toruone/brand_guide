@@ -1,7 +1,7 @@
 %nav.side-nav.side-nav-left
   %h2
     -# %a{:href => "/"} World Brands+
-    =link_to brands_path do
+    =link_to top_path do
       %img{:alt => "", :src => "/img/SiteLogo6.png"}/
   %ul.list-unstyled
     -if user_signed_in?

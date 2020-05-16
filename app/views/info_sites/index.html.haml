@@ -17,12 +17,12 @@
       Info Sites
   .row
     #content.col-sm-12
-      %h2 Information Sites
+      %h1 ◆Information Sites
       .buttons.clearfix
         .pull-right
           -if user_signed_in?
           -else
-            =link_to "login", new_user_session_path, class: "btn btn-primary"
+            =link_to "login / sign up", new_user_session_path, class: "btn btn-primary"
       %br
       %br
       %table.table

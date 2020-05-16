@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'contact', to: "home#contact",as: 'contact'
   get 'about', to: "home#about", as: 'about'
-  # get 'top', to: "home#top"
+  get 'top', to: "home#top" ,as: 'top'
 
   devise_for :admins, controllers: {
     sessions: 'owner/sessions',
@@ -39,6 +38,6 @@ Rails.application.routes.draw do
     resources :info_sites
     resources :shops
   end
-  root to: "brands#index"
+  root to: "home#top"
 end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
