@@ -18,8 +18,8 @@
               .product-thumb
                 %figure
                   .image
-                    =link_to site.url do
-                      =image_tag site.image_url(:thumb), target: "_blank", class: 'img-responsive'
+                    =link_to site.url, target: "_blank" do
+                      =image_tag site.image_url(:thumb), class: 'img-responsive'
                   %figcaption
                     .name=site.name
       .brand_section
