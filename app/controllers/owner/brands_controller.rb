@@ -1,11 +1,13 @@
 class Owner::BrandsController < Owner::ApplicationController
   before_action :set_brand, only: [:show, :edit, :update, :destroy]
+
   def show
   end
 
   def index
     @q = Brand.ransack(params[:q])
     @brands = @q.result(distinct: true)
+    @info_sites = InfoSite.all
   end
 
   def create
@@ -26,7 +28,7 @@ class Owner::BrandsController < Owner::ApplicationController
 
   def destroy
     @brand.destroy
-    redirect_to brands_path
+    redirect_to owner_brands_path
   end
 
   def update
