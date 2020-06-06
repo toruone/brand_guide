@@ -21,7 +21,7 @@
     / HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
 
   %body
-    =render "header"
+    -# =render "admin_header"
     -if notice.present?
       .container
         %p.notice.alert.alert-success{:role => "alert"}
@@ -31,7 +31,7 @@
         %p.alert.alert-danger{:role => "alert"}
           =alert
     = yield
-    =render "footer"
+    -# =render "admin_footer"
     %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"}
     %script{:src => "https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"}
   = javascript_include_tag "admin"
