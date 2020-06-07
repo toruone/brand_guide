@@ -10,7 +10,7 @@ class Owner::InfoSitesController < Owner::ApplicationController
   def create
     @info_site = InfoSite.new(info_site_params)
     if @info_site.save
-      redirect_to info_sites_path
+      redirect_to owner_info_sites_path
     else
       render "new"
     end
@@ -30,7 +30,7 @@ class Owner::InfoSitesController < Owner::ApplicationController
 
   def update
     if @info_site.update(info_site_params)
-      redirect_to info_sites_path(@info_site)
+      redirect_to owner_info_sites_path(@info_site)
     else
       render "edit"
     end
