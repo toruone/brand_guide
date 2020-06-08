@@ -25,12 +25,12 @@ class Owner::InfoSitesController < Owner::ApplicationController
 
   def destroy
     @info_site.destroy
-    redirect_to info_sites_path
+    redirect_to owner_info_sites_path
   end
 
   def update
     if @info_site.update(info_site_params)
-      redirect_to owner_info_sites_path(@info_site)
+      redirect_to owner_info_site_path(@info_site)
     else
       render "edit"
     end

@@ -13,7 +13,7 @@ class Owner::BrandsController < Owner::ApplicationController
   def create
     @brand = Brand.new(brand_params)
     if @brand.save
-      redirect_to brands_path
+      redirect_to owner_brands_path
     else
       render "new"
     end
@@ -33,7 +33,7 @@ class Owner::BrandsController < Owner::ApplicationController
 
   def update
     if @brand.update(brand_params)
-      redirect_to brands_path(@brand)
+      redirect_to owner_brand_path(@brand)
     else
       render "edit"
     end

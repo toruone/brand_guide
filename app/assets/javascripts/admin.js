@@ -1,4 +1,5 @@
 //= require admin/js/core/jquery.min
+//= require jquery_ujs
 //= require admin/js/core/popper.min
 //= require admin/js/core/bootstrap-material-design.min
 //= require admin/js/plugins/perfect-scrollbar.jquery.min
