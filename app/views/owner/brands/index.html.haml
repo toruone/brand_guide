@@ -42,15 +42,15 @@
             %li.nav-item
               %a.nav-link{:href => "./info_sites"}
                 %i.material-icons library_books
-                %p InfoSite List
+                %p Info Site List
             %li.nav-item
               %a.nav-link{:href => "./brands/new"}
-                %i.material-icons bubble_chart
+                %i.material-icons bookmark
                 %p Create New Brand
             %li.nav-item
               %a.nav-link{:href => "./info_sites/new"}
-                %i.material-icons bubble_chart
-                %p Create New Site
+                %i.material-icons language
+                %p Create New Info Site
             %li.nav-item
               %a.nav-link{:href => "./map.html"}
                 %i.material-icons location_ons
@@ -59,10 +59,6 @@
               %a.nav-link{:href => "./notifications.html"}
                 %i.material-icons notifications
                 %p Notifications
-            %li.nav-item
-              %a.nav-link{:href => "./rtl.html"}
-                %i.material-icons language
-                %p RTL Support
             %li.nav-item.active-pro
               %a.nav-link{:href => "./upgrade.html"}
                 %i.material-icons unarchive
@@ -150,39 +146,6 @@
                               %td.text-primary
                                 =link_to "Delete", owner_brand_path(brand), method: :delete, data: {confirm: "Delete OK？"}, class: "btn btn-default"
 
-              .col-md-12
-                .card.card-plain
-                  .card-header.card-header-primary
-                    %h4.card-title.mt-0 Info SItes
-                    -# %p.card-category Here is a subtitle for this table
-                  .card-body
-                    .table-responsive
-                      %table.table.table-hover
-                        %thead
-                          %th
-                            ID
-                          %th
-                            Name
-                          %th
-                            For
-                          %th
-                            Edit
-                          %th
-                            Delete
-                        -@info_sites.each do |info_site|
-                          %tbody
-                            %tr
-                              %td
-                                =info_site.id
-                              %td
-                                =info_site.name
-                              %td
-                                =info_site.for
-                              %td
-                                =link_to "Edit", edit_owner_info_site_path(info_site)
-                              %td
-                                =link_to "Delete", owner_info_site_path(info_site), method: :delete, data: {confirm: "Delete OK？"}, class: "btn btn-default"
-
         %footer.footer
           .container-fluid
             %nav.float-left
@@ -238,7 +201,9 @@
             %a.img-holder.switch-trigger{:href => "javascript:void(0)"}
               %img{:alt => "", :src => "../assets/img/sidebar-4.jpg"}/
           %li.button-container
-            %a.btn.btn-primary.btn-block{:href => "https://www.creative-tim.com/product/material-dashboard", :target => "_blank"} Free Download
+            %a.btn.btn-primary.btn-block{:href => "./brands/new"} Create New Brand
+          %li.button-container
+            %a.btn.btn-success.btn-block{:href => "./brands/new"} Create New Info Site
           /
             <li class="header-title">Want more components?</li>
             <li class="button-container">
@@ -246,9 +211,9 @@
             Get the pro version
             </a>
             </li>
-          %li.button-container
-            %a.btn.btn-default.btn-block{:href => "https://demos.creative-tim.com/material-dashboard/docs/2.1/getting-started/introduction.html", :target => "_blank"}
-              View Documentation
+          -# %li.button-container
+          -#   %a.btn.btn-default.btn-block{:href => "https://demos.creative-tim.com/material-dashboard/docs/2.1/getting-started/introduction.html", :target => "_blank"}
+          -#     View Documentation
           %li.button-container.github-star
             %a.github-button{"aria-label" => "Star ntkme/github-buttons on GitHub", "data-icon" => "octicon-star", "data-show-count" => "true", "data-size" => "large", :href => "https://github.com/creativetimofficial/material-dashboard"} Star
           %li.header-title Thank you for 95 shares!
