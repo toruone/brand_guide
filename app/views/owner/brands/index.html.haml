@@ -23,8 +23,8 @@
 
           Tip 2: you can also add an image using data-image tag
         .logo
-          %a.simple-text.logo-normal{:href => "http://www.creative-tim.com"}
-            Creative Tim
+          %a.simple-text.logo-normal{:href => "http://localhost:3000/"}
+            HOME
         .sidebar-wrapper
           %ul.nav
             %li.nav-item
@@ -138,7 +138,7 @@
                               %td
                                 =brand.id
                               %td
-                                =brand.name
+                                =link_to brand.name, owner_brand_path(brand)
                               %td
                                 =brand.country
                               %td
