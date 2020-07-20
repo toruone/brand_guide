@@ -4,34 +4,29 @@
 
     Tip 2: you can also add an image using data-image tag
   .logo
-    %a.simple-text.logo-normal{:href => "http://www.creative-tim.com"}
-      Creative Tim
+    =link_to "Home", top_path, class: "simple-text logo-normal"    
   .sidebar-wrapper
     %ul.nav
-      %li.nav-item
-        %a.nav-link{:href => "./dashboard.html"}
-          %i.material-icons dashboard
-          %p Dashboard
       %li.nav-item
         %a.nav-link{:href => "./user.html"}
           %i.material-icons person
           %p User Profile
       %li.nav-item.active
-        %a.nav-link{:href => "./brands"}
+        =link_to owner_brands_path, class: "nav-link" do
           %i.material-icons content_paste
           %p Brand List
       %li.nav-item
-        %a.nav-link{:href => "./info_sites"}
+        =link_to owner_info_sites_path, class: "nav-link" do
           %i.material-icons library_books
           %p InfoSite List
       %li.nav-item
-        %a.nav-link{:href => "./icons.html"}
-          %i.material-icons bubble_chart
-          %p Icons
+        =link_to new_owner_brand_path, class: "nav-link" do
+          %i.material-icons bookmark
+          %p Create New Brand
       %li.nav-item
-        %a.nav-link{:href => "./icons.html"}
-          %i.material-icons bubble_chart
-          %p Icons
+        =link_to new_owner_info_site_path, class: "nav-link" do
+          %i.material-icons language
+          %p Create New Site
       %li.nav-item
         %a.nav-link{:href => "./map.html"}
           %i.material-icons location_ons
@@ -40,11 +35,3 @@
         %a.nav-link{:href => "./notifications.html"}
           %i.material-icons notifications
           %p Notifications
-      %li.nav-item
-        %a.nav-link{:href => "./rtl.html"}
-          %i.material-icons language
-          %p RTL Support
-      %li.nav-item.active-pro
-        %a.nav-link{:href => "./upgrade.html"}
-          %i.material-icons unarchive
-          %p Upgrade to PRO

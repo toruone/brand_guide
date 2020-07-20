@@ -33,15 +33,6 @@
       %li
         = link_to 'Contact Us', new_contact_path
 
-    -if admin_signed_in?
-      %li
-        = link_to 'Brands (admin)', owner_brands_path
-      %li
-        = link_to 'Info Sites (admin)', owner_info_sites_path
-      %li
-        = link_to 'Shops (admin)', owner_shops_path
-      %li
-        = link_to 'Log Out (admin)', destroy_admin_session_path
 
 .site-overlay
 .wrapper
