@@ -3,7 +3,7 @@
   %nav.navbar.navbar-expand-lg.navbar-transparent.navbar-absolute.fixed-top
     .container-fluid
       .navbar-wrapper
-        %a.navbar-brand{:href => "javascript:;"} 
+        %a.navbar-brand{:href => "javascript:;"}
       %button.navbar-toggler{"aria-controls" => "navigation-index", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-toggle" => "collapse", :type => "button"}
         %span.sr-only Toggle navigation
         %span.navbar-toggler-icon.icon-bar
@@ -51,7 +51,7 @@
         .col-md-12
           .card
             .card-header
-              %h4.card-title Create New Brands
+              %h4.card-title Create or Edit Brand
 
     =bootstrap_form_with model: [:owner, @brand], local: true do |f|
       =f.text_field :name
