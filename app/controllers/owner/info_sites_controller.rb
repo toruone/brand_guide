@@ -30,7 +30,7 @@ class Owner::InfoSitesController < Owner::ApplicationController
 
   def update
     if @info_site.update(info_site_params)
-      redirect_to owner_info_site_path(@info_site)
+      redirect_to owner_info_sites_path
     else
       render "edit"
     end

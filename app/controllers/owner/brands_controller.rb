@@ -33,7 +33,7 @@ class Owner::BrandsController < Owner::ApplicationController
 
   def update
     if @brand.update(brand_params)
-      redirect_to owner_brand_path(@brand)
+      redirect_to owner_brands_path
     else
       render "edit"
     end
