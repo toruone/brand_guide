@@ -34,50 +34,49 @@
         = link_to 'Contact Us', new_contact_path
 
 .site-overlay
-.wrapper
-  %header
-    .container-fluid
-      .row
-        .col-sm-12
-          .menu.pull-left{"data-placement" => "bottom", "data-toggle" => "tooltip", :title => "Menu"}
-            -# %i.icon.ion-ios-more
-            %img{:alt => "", :src => "/img/SiteLogo6.png"}/
-          .account.pull-right
-            %ul.list-inline
-              %li.dropdown
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                  %i.icon.ion-ios-person-outline{"data-placement" => "bottom", "data-toggle" => "tooltip", :title => "My Account"}
-                %ul.dropdown-menu.dropdown-menu-right.text-center
-                  %li.dropdown-triangle
-                  -if admin_signed_in?
-                    %li
-                      = link_to 'Log Out(admin)', destroy_admin_session_path
-                  -if user_signed_in?
-                    %li
-                      = link_to 'My Page', login_mypage_path
-                    %li
-                      = link_to 'My Profile', edit_login_mypage_profile_path
-                    %li
-                      = link_to 'Log Out', destroy_user_session_path
-                  -else
-                    %li
-                      =link_to "Log In", new_user_session_path
-                    %li
-                      =link_to "Sign Up", new_user_registration_path
-
-  .container-fluid.nopadding
+%header
+  .container-fluid
     .row
       .col-sm-12
-        #slideshow.owl-carousel{:style => "opacity: 1;"}
-          .item
-            %img{:alt => "", :src => "img/top_pic1.jpg"}/
-          .item
-            %img{:alt => "", :src => "img/top_pic4.jpg"}/
-          .item
-            %img{:alt => "", :src => "img/top_pic2.jpg"}/
-          .item
-            %img{:alt => "", :src => "img/top_pic7.jpg"}/
-            
+        .menu.pull-left{"data-placement" => "bottom", "data-toggle" => "tooltip", :title => "Menu"}
+          -# %i.icon.ion-ios-more
+          %img{:alt => "", :src => "/img/SiteLogo6.png"}/
+        .account.pull-right
+          %ul.list-inline
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                %i.icon.ion-ios-person-outline{"data-placement" => "bottom", "data-toggle" => "tooltip", :title => "My Account"}
+              %ul.dropdown-menu.dropdown-menu-right.text-center
+                %li.dropdown-triangle
+                -# -if admin_signed_in?
+                -#   %li
+                -#     = link_to 'Log Out(admin)', destroy_admin_session_path
+                -if user_signed_in?
+                  %li
+                    = link_to 'My Page', login_mypage_path
+                  %li
+                    = link_to 'My Profile', edit_login_mypage_profile_path
+                  %li
+                    = link_to 'Log Out', destroy_user_session_path
+                -else
+                  %li
+                    =link_to "Log In", new_user_session_path
+                  %li
+                    =link_to "Sign Up", new_user_registration_path
+
+  -# .container-fluid.nopadding
+  -#   .row
+  -#     .col-sm-12
+  -#       #slideshow.owl-carousel{:style => "opacity: 1;"}
+  -#         .item
+  -#           %img{:alt => "", :src => "img/top_pic1.jpg"}/
+  -#         .item
+  -#           %img{:alt => "", :src => "img/top_pic4.jpg"}/
+  -#         .item
+  -#           %img{:alt => "", :src => "img/top_pic2.jpg"}/
+  -#         .item
+  -#           %img{:alt => "", :src => "img/top_pic7.jpg"}/
+
 -#
 -# !!!
 -# %html{:lang => "en"}
