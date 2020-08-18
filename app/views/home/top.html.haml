@@ -82,8 +82,9 @@
               %br
               %strong【About this site】
               %br/
-              %p Welcome to World Brands+, this site is the platform for searching fashion brands around the world.
-              %p You can also group your favorite brands on My Page and check the websites and shops of those brands at any time.
+              %h4 Welcome to World Brands+, this site is the platform for searching fashion brands around the world.
+              %h4 You can group your favorite brands on My Page and check the websites and shops of those brands at any time.
+              %h3 The table of contents from upper left menu!
           .buttons.clearfix
             .pull-right
               -if user_signed_in?
@@ -93,14 +94,14 @@
 .container.showcase
   .row
     .col-sm-6
-      %h1 ■Brands
-    .col-sm-6
-      = search_form_for @q do |f|
-        .input-group
-          = f.search_field :name_cont, class: "form-control"
-          -# %input#button-search.btn.btn-default{:type => "button", :value => "Search"}
-          %span.input-group-btn
-            = f.submit "Search", class: "btn btn-default"
+      %h1=link_to "■Go to Brands List", brands_path
+    -# .col-sm-6
+    -#   = search_form_for @q do |f|
+    -#     .input-group
+    -#       = f.search_field :name_cont, class: "form-control"
+    -#       -# %input#button-search.btn.btn-default{:type => "button", :value => "Search"}
+    -#       %span.input-group-btn
+    -#         = f.submit "Search", class: "btn btn-default"
   .row
     -@brands.each do |brand|
       .product-grid.col-xs-6.col-sm-3

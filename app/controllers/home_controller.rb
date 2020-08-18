@@ -4,6 +4,6 @@ class HomeController < ApplicationController
 
   def top
     @q = Brand.ransack(params[:q])
-    @brands = @q.result(distinct: true).page(params[:page]).per(12)
+    @brands = @q.result(distinct: true).page(params[:page]).per(8)
   end
 end
