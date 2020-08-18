@@ -38,8 +38,9 @@ class BrandImageUploader < CarrierWave::Uploader::Base
   # version :thumb do
   #   process resize_to_fit: [50, 50]
   # end
+
   version :logo do
-    process resize_and_pad: [263, 263]
+    process resize_and_pad: [635, 635]
   end
 
   version :thumb do
