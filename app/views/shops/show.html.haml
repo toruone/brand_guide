@@ -15,13 +15,13 @@
         .col-sm-7
           %ul.thumbnails
             %li
-              .thumbnail
-                =link_to @shop.image_url(:large), class: 'thumbnail' do
-                  =image_tag @shop.image_url(:logo), class: 'img-responsive'
-            -(1..3).each do |i|
-              %li
-                =link_to @shop.try("image#{i}_url", :large), class: 'thumbnail' do
-                  =image_tag @shop.try("image#{i}_url", :thumb), class: 'img-responsive'
+            .thumbnail
+            =link_to @shop.image_url(:large), class: 'thumbnail' do
+              =image_tag @shop.image_url(:logo), class: 'img-responsive'
+            -# -(1..3).each do |i|
+            -#   %li
+            -#     =link_to @shop.try("image#{i}_url", :large), class: 'thumbnail' do
+            -#       =image_tag @shop.try("image#{i}_url", :thumb), class: 'img-responsive'
               -# %a.thumbnail{:href => "/img/image_holder_x800.png", :title => ""}
               -#   %img.img-responsive{:alt => "", :src => "/img/image_holder_x800.png", :title => ""}/
             -# %li

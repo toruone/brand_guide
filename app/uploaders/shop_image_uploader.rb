@@ -32,7 +32,7 @@ class ShopImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
   version :logo do
-    process resize_and_pad: [263, 263]
+    process resize_and_pad: [620, 620]
   end
 
   version :large do

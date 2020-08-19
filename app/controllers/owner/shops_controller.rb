@@ -12,7 +12,7 @@ class Owner::ShopsController < Owner::ApplicationController
   def create
     @shop = Shop.new(shop_params)
     if @shop.save
-      redirect_to owner_shops_path
+      redirect_to owner_brands_path
     else
       render "new"
     end
