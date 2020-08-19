@@ -32,7 +32,7 @@ class Owner::ShopsController < Owner::ApplicationController
 
   def update
     if @shop.update(shop_params)
-      redirect_to shops_path(@shop)
+      redirect_to owner_brands_path
     else
       render "edit"
     end
